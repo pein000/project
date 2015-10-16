@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 
+<title>一元购物网站首页</title>
 <body id="loadingPicBlock" class="home" rf="1">
 <div class="wrapper">
     <!--顶部-->
