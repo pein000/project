@@ -1,7 +1,5 @@
 package com.one.shop.util;
 
-import com.one.shop.domain.Type;
-import com.one.shop.entity.TypeEntity;
 import jodd.bean.BeanCopy;
 
 import java.util.ArrayList;
@@ -12,8 +10,21 @@ import java.util.List;
  */
 public class ShopUtils {
 
-    public static <T,D> List<T> convert(Iterable<D> entityIterable,Class<T> clazz) {
-        if(entityIterable == null){
+    public static <T, D> T convert(D source, Class<T> destClazz) {
+        T destination = null;
+        try {
+            destination = destClazz.newInstance();
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        BeanCopy.beans(source, destination).copy();
+        return destination;
+    }
+
+    public static <T, D> List<T> convert(Iterable<D> entityIterable, Class<T> clazz) {
+        if (entityIterable == null) {
             return null;
         }
         List<T> list = new ArrayList<T>();
@@ -22,18 +33,18 @@ public class ShopUtils {
                 T dest = clazz.newInstance();
                 BeanCopy.beans(entity, dest).copy();
                 list.add(dest);
-            }  catch (InstantiationException e) {
-                e.printStackTrace();
+            } catch (InstantiationException e) {
+                throw new RuntimeException(e);
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
 
         return list;
     }
 
-    public static <T,D> List<T> convert(List<D> entityList,Class<T> clazz) {
-        if(entityList == null){
+    public static <T, D> List<T> convert(List<D> entityList, Class<T> clazz) {
+        if (entityList == null) {
             return null;
         }
         List<T> list = new ArrayList<T>();
@@ -42,7 +53,7 @@ public class ShopUtils {
                 T dest = clazz.newInstance();
                 BeanCopy.beans(entity, dest).copy();
                 list.add(dest);
-            }  catch (InstantiationException e) {
+            } catch (InstantiationException e) {
                 throw new RuntimeException(e);
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);

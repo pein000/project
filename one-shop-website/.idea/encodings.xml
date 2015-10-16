@@ -2,13 +2,26 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/build.gradle" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/5366f71b6bd8f.tif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/style.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/big/main_first.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/big/main_second.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/big/main_third.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/life.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/phone.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/ticket.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/detail/1.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/detail/2.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/detail/3.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/detail/4.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-immersive-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-print-land-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-proc-device-detail-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-proc-device-overview-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-saf1-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-saf2-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/image/type/kk-sensors-moves-n5.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/bootstrap.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/bootstrap.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/jquery-2.0.0.min.js" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

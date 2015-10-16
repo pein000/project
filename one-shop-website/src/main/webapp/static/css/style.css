@@ -1,0 +1,15 @@
+.cord_lists{
+    height: 250px;
+}
+.cord_item img{
+    height:100px;
+    width: 80px;
+}
+
+.det_button{height: 100px;}
+.det_button .det_shop_but{width:250px;height:49px;line-height:49px;text-align:center;border:1px solid #db3652;border-bottom:1px solid #ea4163;background:#db3652;color:#fff;border-radius:3px;font-family:微软雅黑,黑体;font-size:24px;display:inline-block;float:left;margin-right:6px}
+.det_button .det_shop_but_exit{width:250px;height:49px;line-height:49px;text-align:center;border:1px solid #ccc;border-bottom:1px solid #ccc;background:#ccc;color:#fff;border-radius:3px;font-family:微软雅黑,黑体;font-size:24px;display:inline-block;float:left;margin-right:6px}
+.det_button .det_shop_but:hover{background:#ea4163;color:#fff}
+.det_button .det_cart{width:250px;height:49px;line-height:49px;text-align:center;border:1px solid #FDD395;background:#FFEBC4;color:#db3652;border-radius:3px;font-family:微软雅黑,黑体;font-size:18px;display:inline-block;position:relative;float:right;padding-left:50px;padding-right:22px}
+.det_button .det_cart:hover{background:#FFF4BF;color:#db3652}
+.det_button .det_cart i{width:21px;height:18px;display:inline-block;background-position:-71px 0;position:absolute;left:30px;top:15px;cursor:pointer}
