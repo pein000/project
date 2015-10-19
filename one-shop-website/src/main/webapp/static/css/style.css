@@ -6,6 +6,40 @@
     width: 80px;
 }
 
+.head-menu ul{
+    height: 50px;
+    /*text-align: right;*/
+}
+.head-menu ul li{
+    list-style-type:none;
+    float: right;
+}
+.login_process{
+    height: 30px;
+    background-color: #afd9ee;
+}
+
+.login_processCur{
+    height: 30px;
+    background-color: #f0ad4e;
+}
+.login_process li{
+    width: 150px;
+    list-style-type:none;
+    float: left;
+}
+.login_title p{
+    height: 20px;
+}
+.login_form{
+    margin-left: 300px;
+    width:600px;
+}
+.progress_sign{
+    text-align: center;
+    border: solid 1px #ac2925;
+    background: #eea236;
+}
 .det_button{height: 100px;}
 .det_button .det_shop_but{width:250px;height:49px;line-height:49px;text-align:center;border:1px solid #db3652;border-bottom:1px solid #ea4163;background:#db3652;color:#fff;border-radius:3px;font-family:微软雅黑,黑体;font-size:24px;display:inline-block;float:left;margin-right:6px}
 .det_button .det_shop_but_exit{width:250px;height:49px;line-height:49px;text-align:center;border:1px solid #ccc;border-bottom:1px solid #ccc;background:#ccc;color:#fff;border-radius:3px;font-family:微软雅黑,黑体;font-size:24px;display:inline-block;float:left;margin-right:6px}
