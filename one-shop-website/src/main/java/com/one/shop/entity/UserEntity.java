@@ -1,8 +1,5 @@
 package com.one.shop.entity;
 
-import com.mysql.jdbc.V1toV2StatementInterceptorAdapter;
-import org.hibernate.annotations.Generated;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -39,12 +36,6 @@ public class UserEntity {
 
     @Column(name = "ADDRESS")
     private String address;
-
-    @Column(name = "POINT_ID")
-    private String pointId;//积分Id
-
-    @Column(name = "CASH_ACCOUNT_ID")
-    private String cashAccountId;//现金账户Id
 
     public int getId() {
         return id;
@@ -110,19 +101,4 @@ public class UserEntity {
         this.address = address;
     }
 
-    public String getPointId() {
-        return pointId;
-    }
-
-    public void setPointId(String pointId) {
-        this.pointId = pointId;
-    }
-
-    public String getCashAccountId() {
-        return cashAccountId;
-    }
-
-    public void setCashAccountId(String cashAccountId) {
-        this.cashAccountId = cashAccountId;
-    }
 }

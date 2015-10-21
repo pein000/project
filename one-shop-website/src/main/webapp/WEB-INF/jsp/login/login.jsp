@@ -41,7 +41,7 @@
                        placeholder="请输入验证码">
                 <label for="identifyCode">
                     <a>
-                        <img id="identifyPic" src="identify"/>
+                        <img id="identifyPic" src="${pageContext.request.contextPath}/identify"/>
                     </a>
                 </label>
             </div>

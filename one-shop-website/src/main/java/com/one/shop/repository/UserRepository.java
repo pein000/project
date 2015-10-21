@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public interface UserRepository extends CrudRepository<UserEntity,Long>{
+public interface UserRepository extends CrudRepository<UserEntity,Integer>{
 
     public UserEntity findByName(String name);
 

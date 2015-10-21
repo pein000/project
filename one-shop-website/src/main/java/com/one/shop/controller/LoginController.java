@@ -1,5 +1,6 @@
 package com.one.shop.controller;
 
+import com.one.shop.consts.SystemVariable;
 import com.one.shop.domain.User;
 import com.one.shop.service.LoginService;
 import org.slf4j.Logger;
@@ -43,7 +44,7 @@ public class LoginController {
             return "/login/login";
         }
 
-        session.setAttribute("user",user);
+        session.setAttribute(SystemVariable.SESSION_KEY_USER,user);
         return "redirect:index";
 
     }

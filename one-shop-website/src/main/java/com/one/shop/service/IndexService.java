@@ -1,15 +1,18 @@
 package com.one.shop.service;
 
-import com.one.shop.domain.*;
-import com.one.shop.entity.*;
-import com.one.shop.repository.*;
+import com.one.shop.domain.Goods;
+import com.one.shop.domain.Type;
+import com.one.shop.entity.GoodsEntity;
+import com.one.shop.entity.TypeEntity;
+import com.one.shop.repository.GoodsRepository;
+import com.one.shop.repository.TypeRepository;
+import com.one.shop.repository.impl.HottestRepositoryImpl;
+import com.one.shop.repository.impl.NewestRepositoryImpl;
+import com.one.shop.repository.impl.RevealedRepositoryImpl;
 import com.one.shop.util.ShopUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

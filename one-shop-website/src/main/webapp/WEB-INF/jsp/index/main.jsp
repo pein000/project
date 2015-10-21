@@ -59,7 +59,7 @@
                                 </li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="#">
+                                    <a role="menuitem" tabindex="-1" href="settings/toSettings">
                                         个人设置
                                     </a>
                                 </li>

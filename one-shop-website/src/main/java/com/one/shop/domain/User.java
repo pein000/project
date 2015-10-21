@@ -21,9 +21,6 @@ public class User {
 
     private String address;
 
-    private String pointId;//积分Id
-
-    private String cashAccountId;//现金账户Id
 
     public int getId() {
         return id;
@@ -89,19 +86,4 @@ public class User {
         this.address = address;
     }
 
-    public String getPointId() {
-        return pointId;
-    }
-
-    public void setPointId(String pointId) {
-        this.pointId = pointId;
-    }
-
-    public String getCashAccountId() {
-        return cashAccountId;
-    }
-
-    public void setCashAccountId(String cashAccountId) {
-        this.cashAccountId = cashAccountId;
-    }
 }

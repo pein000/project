@@ -10,10 +10,82 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2015-10-19 10:37:49
+Date: 2015-10-21 21:19:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for one_account_cash
+-- ----------------------------
+DROP TABLE IF EXISTS `one_account_cash`;
+CREATE TABLE `one_account_cash` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_ID` int(11) DEFAULT NULL,
+  `AMOUNT` decimal(32,4) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of one_account_cash
+-- ----------------------------
+INSERT INTO `one_account_cash` VALUES ('1', '100001', '1.0000');
+
+-- ----------------------------
+-- Table structure for one_account_point
+-- ----------------------------
+DROP TABLE IF EXISTS `one_account_point`;
+CREATE TABLE `one_account_point` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_ID` int(11) DEFAULT NULL,
+  `AMOUNT` decimal(32,4) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of one_account_point
+-- ----------------------------
+INSERT INTO `one_account_point` VALUES ('1', '100001', '7.0000');
+
+-- ----------------------------
+-- Table structure for one_cash_flow
+-- ----------------------------
+DROP TABLE IF EXISTS `one_cash_flow`;
+CREATE TABLE `one_cash_flow` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CASH_ID` int(11) DEFAULT NULL COMMENT 'one_account_cash的主键id',
+  `AMOUNT` decimal(32,4) DEFAULT NULL COMMENT '金额',
+  `TRADE_TYPE` varchar(12) DEFAULT NULL COMMENT '交易类型\r\nCHARGE:充值\r\nCONSUME:消费\r\nWITHDRAW:提现\r\n OTHERS:其他',
+  `TRADE_PATH` varchar(12) DEFAULT NULL COMMENT '交易途径\r\nALIPAY:支付宝\r\n WECHATPAY:微信支付\r\n SYSCONSUM:系统消费\r\n  OTHERS:其他途径',
+  `TRADE_TIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of one_cash_flow
+-- ----------------------------
+INSERT INTO `one_cash_flow` VALUES ('1', '1', '0.3000', 'CHARGE', 'ALIPAY', '2015-10-21 15:28:37');
+INSERT INTO `one_cash_flow` VALUES ('2', '1', '0.7000', 'CHARGE', 'WECHATPAY', '2015-10-22 15:29:21');
+
+-- ----------------------------
+-- Table structure for one_point_flow
+-- ----------------------------
+DROP TABLE IF EXISTS `one_point_flow`;
+CREATE TABLE `one_point_flow` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `POINT_ID` int(11) DEFAULT NULL COMMENT 'one_account_point的ID',
+  `AMOUNT` decimal(32,4) DEFAULT NULL,
+  `INCOME_PATH` varchar(32) DEFAULT NULL COMMENT '收入来源SHOPPINGAWARD:购物奖赏\r\n FRIENDAWARD:邀请好友奖赏\r\n GAMEAWARD:游戏奖赏\r\n SHOPPINGOFFSET:购物冲抵\r\n GAMEOFFSET:游戏消费\r\n OTHERS:其他途径',
+  `POINT_TYPE` varchar(32) DEFAULT NULL COMMENT '积分类型\r\nADD:获得积分\r\n SUB:扣减积分',
+  `POINT_TIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of one_point_flow
+-- ----------------------------
+INSERT INTO `one_point_flow` VALUES ('1', '1', '3.0000', 'SHOPPINGAWARD', 'ADD', '2015-10-21 17:40:26');
+INSERT INTO `one_point_flow` VALUES ('2', '1', '4.0000', 'FRIENDAWARD', 'ADD', '2015-10-22 17:40:57');
 
 -- ----------------------------
 -- Table structure for one_shop_goods
@@ -123,16 +195,12 @@ CREATE TABLE `one_shop_user` (
   `POINT_ID` int(11) DEFAULT NULL,
   `CASH_ACCOUNT_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100002 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of one_shop_user
 -- ----------------------------
-INSERT INTO `one_shop_user` VALUES ('1', 'qiuwei', null, '123456', '1223123443', null, null, null, null, null);
-INSERT INTO `one_shop_user` VALUES ('2', 'zhangyan', null, '123456', '1235542345', null, null, null, null, null);
-INSERT INTO `one_shop_user` VALUES ('3', '清风终结者', null, '123123', '1234423423', null, null, null, null, null);
-INSERT INTO `one_shop_user` VALUES ('4', '清风终结者', null, '1242332', '1234423423', null, null, null, null, null);
-INSERT INTO `one_shop_user` VALUES ('5', '清风终结者', '一纸清风，一生寂寞', '12324253', '1234423423', 'vesalqiu_000@163.com', null, '陆家嘴天涯妓院', null, null);
+INSERT INTO `one_shop_user` VALUES ('100001', '清风终结者', '一纸清风，一生寂寞', '12324253', '1234423423', 'vesalqiu_000@163.com', '/static/image/user/清风终结者_1234423423.JPG', '陆家嘴天涯妓院', null, null);
 
 -- ----------------------------
 -- Table structure for picture_goods_url
