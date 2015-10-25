@@ -40,7 +40,7 @@ public class WebStaticConfig extends WebMvcConfigurerAdapter {
      */
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new UserLoginInterceptor())
-                .addPathPatterns("/settings/**","/cash/**","/point/**");
+                .addPathPatterns("/settings/**","/cash/**","/point/**","/car/**","/pay/**");
     }
 
 

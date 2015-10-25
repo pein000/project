@@ -18,6 +18,8 @@
                 }
 
                 $("#num_dig").val(value);
+                $("#pay_quantity").val(value);
+                $("#car_quantity").val(value);
             });
             $("#shop_add").bind("click", function () {
                 var value = $("#num_dig").val();
@@ -30,6 +32,21 @@
                     value++;
                 }
                 $("#num_dig").val(value);
+                $("#pay_quantity").val(value);
+                $("#car_quantity").val(value);
+            });
+
+            $("#num_dig").bind("blur",function(){
+                $("#pay_quantity").val($("#num_dig").val());
+                $("#car_quantity").val($("#num_dig").val());
+            });
+
+            $("#car_button").bind("click",function(){
+                $("#car_form").submit();
+            });
+
+            $("#pay_button").bind("click",function(){
+                $("#pay_form").submit();
             });
         })
     </script>
@@ -90,8 +107,24 @@
     </div>
 
     <div id="divBuy" class="det_button">
-        <a href="javascript:;" class="det_shop_but">立即快购</a>
-        <a href="javascript:;" class="det_cart"><i></i>加入购物车</a>
+        <button id="pay_button" class="det_shop_but">立即快购</button>
+        <form id="pay_form" action="${pageContext.request.contextPath}/pay/directPay" method="post">
+            <input type="hidden" name="fullCar.userId" value="${user.id}" />
+            <input type="hidden" name="fullCar.goodsId" value="${goods.id}" />
+            <input type="hidden" id="pay_quantity"  name="fullCar.quantity" value="1" />
+            <input type="hidden" name="fullCar.name" value="${goods.name}" />
+            <input type="hidden" name="fullCar.description" value="${goods.description}" />
+            <input type="hidden" name="fullCar.outlineUrl" value="${goods.outlineUrl}" />
+            <input type="hidden" name="fullCar.type" value="${goods.type}" />
+            <input type="hidden" name="fullCar.price" value="${goods.price}" />
+            <input type="hidden" name="fullCar.totalAmount" value="${goods.totalAmount}" />
+            <input type="hidden" name="fullCar.curAmount" value="${goods.curAmount}" />
+        </form>
+        <button id="car_button" class="det_cart"><i></i>加入购物车</button>
+        <form id="car_form" action="${pageContext.request.contextPath}/car/addCar" method="post">
+            <input id="car_quantity" type="hidden" name="quantity" value="1" />
+            <input type="hidden" name="goodsId" value="${goods.id}"/>
+        </form>
     </div>
 
     <div>

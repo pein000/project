@@ -1,9 +1,6 @@
 package com.one.shop.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
@@ -14,6 +11,7 @@ import java.math.BigDecimal;
 public class CashAccountEntity {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="ID")
     private int id;
 

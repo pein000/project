@@ -10,21 +10,21 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
     <script>
-        $(function(){
+        $(function () {
             //注册
-            $("#registerBtn").bind("click",function(){
+            $("#registerBtn").bind("click", function () {
                 location.href = "toRegister";
             });
             //登录
-            $("#loginBtn").bind("click",function(){
+            $("#loginBtn").bind("click", function () {
                 location.href = "toLogin";
             });
         })
 
     </script>
 </head>
-<body>
-<div>
+
+<div class="main_content">
     <!--head-->
     <div class="head-menu">
         <ul>
@@ -59,13 +59,17 @@
                                 </li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="settings/toSettings">
+                                    <a role="menuitem" tabindex="-1" href="${pageContext.request.contextPath}/settings/toSettings">
                                         个人设置
                                     </a>
                                 </li>
                                 <li role="presentation" class="divider" style="height: 1px;"></li>
                                 <li role="presentation">
                                     <a role="menuitem" tabindex="-1" href="#">立即充值</a>
+                                </li>
+                                <li role="presentation" class="divider" style="height: 1px;"></li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="${pageContext.request.contextPath}/login/loginOut">立即退出</a>
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +79,7 @@
 
         </ul>
     </div>
-    <div>
+    <div class="content">
         <table>
             <tr>
                 <td>
@@ -140,7 +144,7 @@
                 <c:forEach items="${hottestList}" var="hottest" varStatus="hotStatus">
                     <div class="cord_item" style="float: left;">
                         <a href="detail?goodsId=${hottest.id}">
-                            <img src="${pageContext.request.contextPath}/static/image/${revlealed.outlineUrl}"/>
+                            <img src="${hottest.outlineUrl}"/>
                         </a>
 
                         <div>${hottest.name}</div>
@@ -159,7 +163,7 @@
                 <c:forEach items="${newestList}" var="newest" varStatus="newStatus">
                     <div class="cord_item" style="float: left;">
                         <a href="detail?goodsId=${newest.id}">
-                            <img src="${pageContext.request.contextPath}/static/image/${revlealed.outlineUrl}"/>
+                            <img src="${newest.outlineUrl}"/>
                         </a>
 
                         <div>${newest.name}</div>
@@ -178,7 +182,7 @@
                 <c:forEach items="${revealedList}" var="revlealed" varStatus="revealedStatus">
                     <div class="cord_item" style="float: left;">
                         <a href="detail?goodsId=${revlealed.id}">
-                            <img src="${pageContext.request.contextPath}/static/image/${revlealed.outlineUrl}"/>
+                            <img src="${revlealed.outlineUrl}"/>
                         </a>
 
                         <div>${revlealed.name}</div>
@@ -190,6 +194,24 @@
             </div>
         </div>
     </div>
+</div>
+<div class="right_car">
+    <ul>
+        <li>
+            <a href="${pageContext.request.contextPath}/car/toCar">
+                <img href=""/>
+
+                <p>购物车</p>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img href=""/>
+
+                <p>我的关注</p>
+            </a>
+        </li>
+    </ul>
 </div>
 </body>
 </html>

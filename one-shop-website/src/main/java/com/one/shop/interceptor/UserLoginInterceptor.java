@@ -22,6 +22,7 @@ public class UserLoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
        logger.info("Interceptor: check login user.");
         HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(30*60*1000);
         User user = (User) session.getAttribute(SystemVariable.SESSION_KEY_USER);
 
         if(user == null){

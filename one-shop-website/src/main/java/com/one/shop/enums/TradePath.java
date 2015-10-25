@@ -8,7 +8,7 @@ public enum TradePath {
 
     ALIPAY("支付宝"),
     WECHATPAY("微信支付"),
-    SYSCONSUM("系统消费"),
+    CASHPAY("现金账户支付"),
     OTHERS("其他途径");
 
 

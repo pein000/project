@@ -1,6 +1,7 @@
 package com.one.shop.util;
 
 import jodd.bean.BeanCopy;
+import jodd.bean.BeanUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,19 +64,32 @@ public class ShopUtils {
         return list;
     }
 
-//    public static void main(String[] args) {
-//        List<TypeEntity> typeEntityList = new ArrayList<TypeEntity>();
-//        for (int i = 0; i < 10; i++) {
-//            TypeEntity typeEntity = new TypeEntity();
-//            typeEntity.setName("aaa" + i);
-//            typeEntity.setId(i);
-//            typeEntity.setUrl("/ss/oo/dd");
-//            typeEntityList.add(typeEntity);
-//        }
-//
-//        List<Type> typeList = convert(typeEntityList, Type.class);
-//        int i = 0;
-//        int b = 1;
-//
-//    }
+    public static <T, D> List<T> convert(List<D> entityList, Class<T> clazz,String... includes) {
+        if (entityList == null) {
+            return null;
+        }
+        List<T> list = new ArrayList<T>();
+        for (D entity : entityList) {
+            try {
+                T dest = clazz.newInstance();
+                BeanCopy.beans(entity, dest).include(includes).copy();
+                list.add(dest);
+            } catch (InstantiationException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return list;
+    }
+
+
+    public static <E> List<E> setProperties(List<E> source,String property,Object value){
+        for(E e:source){
+            BeanUtil.setProperty(e,property,value);
+        }
+        return source;
+    }
+
 }

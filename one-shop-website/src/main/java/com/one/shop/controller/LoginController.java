@@ -48,4 +48,12 @@ public class LoginController {
         return "redirect:index";
 
     }
+
+    @RequestMapping(value = "/login/loginOut")
+    public String loginOut(HttpSession session) {
+        session.removeAttribute(SystemVariable.SESSION_KEY_USER);
+        session.invalidate();
+        return "redirect:/index";
+
+    }
 }

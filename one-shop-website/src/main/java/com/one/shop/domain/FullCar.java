@@ -1,13 +1,21 @@
 package com.one.shop.domain;
 
-
 import java.math.BigDecimal;
 
 /**
- * Created by pein on 2015/10/13.
+ * Created by pein on 2015/10/21.
  */
-public class Goods {
+public class FullCar {
+
     private int id;
+
+    private int userId;
+
+    private int goodsId;
+
+    private int quantity;
+
+    private String active;
 
     private String name;
 
@@ -23,14 +31,44 @@ public class Goods {
 
     private int curAmount;
 
-    private String status;
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(int goodsId) {
+        this.goodsId = goodsId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getActive() {
+        return active;
+    }
+
+    public void setActive(String active) {
+        this.active = active;
     }
 
     public String getName() {
@@ -87,13 +125,5 @@ public class Goods {
 
     public void setCurAmount(int curAmount) {
         this.curAmount = curAmount;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

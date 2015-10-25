@@ -38,7 +38,7 @@
         我的快购
       </h4>
     </a>
-    <a href="#" class="list-group-item">
+    <a href="${pageContext.request.contextPath}/goods/toGoodsFlow" class="list-group-item">
       <h6 class="list-group-item-heading">
         快购记录
       </h6>

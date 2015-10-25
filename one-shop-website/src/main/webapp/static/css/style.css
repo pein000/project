@@ -45,6 +45,9 @@
     float: left;
     height: 100%;
 }
+.main_content{
+    margin-right:50px;
+}
 .content{
     margin-left: 150px;
     height: 100%;
@@ -62,6 +65,35 @@
 }
 .modal_content{
     display: none;
+}
+.right_car{
+    width:30px;
+    float:right;
+}
+ul li{
+    list-style-type:none;
+}
+.outline{
+    width:60px;
+    height: 80px;
+}
+tr td{
+    vertical-align: middle;
+}
+.pay_platform ul li{
+    float:left;
+    width:300px;
+    height:80px;
+}
+.pay_alipay{
+    background: #31b0d5;
+    width:200px;
+    height:40px;
+}
+.pay_wechatpay{
+    background: #67b168;
+    width:200px;
+    height:40px;
 }
 .det_button{height: 100px;}
 .det_button .det_shop_but{width:250px;height:49px;line-height:49px;text-align:center;border:1px solid #db3652;border-bottom:1px solid #ea4163;background:#db3652;color:#fff;border-radius:3px;font-family:微软雅黑,黑体;font-size:24px;display:inline-block;float:left;margin-right:6px}

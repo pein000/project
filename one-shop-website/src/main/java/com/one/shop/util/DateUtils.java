@@ -17,4 +17,14 @@ public class DateUtils {
             throw new RuntimeException("parse time error.");
         }
     }
+
+    public static String getCurrentDate() {
+        Date now = new Date();
+        return new SimpleDateFormat(DEFAULT_TEMPLATE).format(now);
+    }
+
+    public static String getCurrentDate(String template) {
+        Date now = new Date();
+        return new SimpleDateFormat(template).format(now);
+    }
 }

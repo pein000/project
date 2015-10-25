@@ -3,10 +3,7 @@ package com.one.shop.entity;
 import com.one.shop.enums.IncomePath;
 import com.one.shop.enums.PointType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -26,9 +23,11 @@ public class PointFlowEntity {
     @Column(name="AMOUNT")
     private BigDecimal amount;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="INCOME_PATH")
     private IncomePath incomePath;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="POINT_TYPE")
     private PointType pointType;
 

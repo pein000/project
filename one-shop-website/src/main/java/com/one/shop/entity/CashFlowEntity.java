@@ -24,10 +24,11 @@ public class CashFlowEntity {
     @Column(name = "AMOUNT")
     private BigDecimal amount;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     @Column(name = "TRADE_TYPE")
     private TradeType tradeType;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TRADE_PATH")
     private TradePath tradePath;
 

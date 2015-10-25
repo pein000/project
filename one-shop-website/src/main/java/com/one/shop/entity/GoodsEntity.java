@@ -41,6 +41,9 @@ public class GoodsEntity {
     @Column(name="CUR_AMOUNT")
     private int curAmount;
 
+    @Column(name = "status")
+    private String status;
+
     public int getId() {
         return id;
     }
@@ -103,5 +106,13 @@ public class GoodsEntity {
 
     public void setCurAmount(int curAmount) {
         this.curAmount = curAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
