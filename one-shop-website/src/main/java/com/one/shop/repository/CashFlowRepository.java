@@ -1,7 +1,6 @@
 package com.one.shop.repository;
 
 import com.one.shop.entity.CashFlowEntity;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

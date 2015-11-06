@@ -1,0 +1,42 @@
+apply plugin: "com.ewerk.gradle.plugins.querydsl"
+
+querydsl{
+    jpa=true
+}
+
+querydslVersion = '3.6.1'
+springBootVersion = '1.2.6.RELEASE'
+
+sourceSets{
+    querydsl{
+        java{
+            srcDir 'src/querydsl/java'
+        }
+    }
+    main{
+        java{
+            srcDir 'src/main/java'
+        }
+        resources{
+            srcDir '/src/main/resources'
+        }
+    }
+    test{
+        java{
+            srcDir 'src/test/java'
+        }
+        resources{
+            srcDir '/src/test/resources'
+        }
+    }
+}
+
+configurations {
+    querydslapt
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile  "com.mysema.querydsl:querydsl-jpa:$querydslVersion"
+    querydslapt "com.mysema.querydsl:querydsl-apt:$querydslVersion"
+}

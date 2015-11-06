@@ -4,7 +4,6 @@ import com.one.shop.consts.SystemVariable;
 import com.one.shop.domain.Car;
 import com.one.shop.domain.FullCar;
 import com.one.shop.domain.User;
-import com.one.shop.enums.Active;
 import com.one.shop.service.CarService;
 import com.one.shop.util.DomainUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,23 +26,23 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @RequestMapping(value = "toCar",method = RequestMethod.GET)
-    public ModelAndView toCar(HttpSession session,ModelMap modelMap) {
-        User user = (User)session.getAttribute(SystemVariable.SESSION_KEY_USER);
+    @RequestMapping(value = "toCar", method = RequestMethod.GET)
+    public ModelAndView toCar(HttpSession session, ModelMap modelMap) {
+        User user = (User) session.getAttribute(SystemVariable.SESSION_KEY_USER);
         //根据用户查询当前用户的购物车
-        List<FullCar> fullCarList =  carService.findFullCarByUserId(user.getId());
+        List<FullCar> fullCarList = carService.findFullCarByUserId(user.getId());
 
         modelMap.put("fullCarList", fullCarList);
         return new ModelAndView("/car/car_profile", modelMap);
     }
 
-    @RequestMapping(value = "addCar",method = RequestMethod.POST)
-    public ModelAndView addCar(int goodsId, int quantity, HttpSession session,ModelMap modelMap) {
-        User user = (User)session.getAttribute(SystemVariable.SESSION_KEY_USER);
+    @RequestMapping(value = "addCar", method = RequestMethod.POST)
+    public ModelAndView addCar(int goodsId, int quantity, HttpSession session, ModelMap modelMap) {
+        User user = (User) session.getAttribute(SystemVariable.SESSION_KEY_USER);
         Car car = DomainUtils.getActiveCarInstance(goodsId, quantity, user);
         carService.save(car);
         //根据用户查询当前用户的购物车
-        List<FullCar> fullCarList =  carService.findFullCarByUserId(user.getId());
+        List<FullCar> fullCarList = carService.findFullCarByUserId(user.getId());
 
         modelMap.put("fullCarList", fullCarList);
         return new ModelAndView("/car/car_profile", modelMap);
