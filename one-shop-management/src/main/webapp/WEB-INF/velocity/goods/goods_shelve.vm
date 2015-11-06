@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>一元购物控管界面</title>
+    <link href=#springUrl("/aserts/css/bootstrap.min.css") rel="stylesheet">
+    <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
+    <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
+    <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+    <script>
+        $(function(){
+            $("#but_submit_save").bind("click",function(){
+                $("#form_shelve").submit();
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="main">
+    <div class="head_page">
+        <p>商品管理  <b> > </b>  详情管理 <b> > </b>  商品上架</p>
+    </div>
+    <div class="content">
+        <div class="query_hover">
+            <form id="form_shelve" class="form-horizontal" role="form" method="post" action=#springUrl("/goods/to_save_goods")>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">商品名称</label>
+                    <div class="col-sm-10">
+                        <input name="name"   type="text" class="form-control" id="name"
+                               placeholder="请输入商品名称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-2 control-label">商品描述</label>
+                    <div class="col-sm-10">
+                        <input name="description" type="text" class="form-control" id="description"
+                               placeholder="请输入商品描述">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="type" class="col-sm-2 control-label">商品类型</label>
+                    <div class="col-sm-10">
+                        <input name="type"  type="text" class="form-control" id="type"
+                               placeholder="请输入商品类型">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="outlineUrl" class="col-sm-2 control-label">商品图片</label>
+                    <div class="col-sm-10">
+                        <input name="outlineUrl"  type="text" class="form-control" id="outlineUrl"
+                               placeholder="请输入商品图片">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="col-sm-2 control-label">商品价格</label>
+                    <div class="col-sm-10">
+                        <input name="price"  type="text" class="form-control" id="price"
+                               placeholder="请输入商品价格">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount" class="col-sm-2 control-label">商品总人次</label>
+                    <div class="col-sm-10">
+                        <input name="totalAmount"  type="text" class="form-control" id="totalAmount"
+                               placeholder="请输入商品总人次">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="curAmount" class="col-sm-2 control-label">商品当前人次</label>
+                    <div class="col-sm-10">
+                        <input name="curAmount"  type="text" class="form-control" id="curAmount"
+                               placeholder="请输入商品当前人次">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">商品状态</label>
+                    <div class="col-sm-10">
+                        <input name="status" type="text" class="form-control" id="status"
+                               placeholder="请输入商品状态">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="createTime" class="col-sm-2 control-label">商品创建时间</label>
+                    <div class="col-sm-10">
+                        <input name="createTime" type="text" class="form-control" id="createTime"
+                               placeholder="请输入商品创建时间">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button id="but_submit_save" type="button" class="btn btn-default">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

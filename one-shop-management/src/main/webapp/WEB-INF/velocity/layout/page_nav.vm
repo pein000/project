@@ -1,0 +1,80 @@
+<style>
+    .page_footer{
+        text-align: center;
+    }
+    .i_page_num{
+        text-align: center;
+        width:50px;
+    }
+</style>
+<script>
+
+    var submit = function(value){
+        $("#pageNum").val(value);
+        $("#form_query").submit();
+    }
+
+    var getPageNum = function(){
+        return parseInt($(".i_page_num").val());
+    }
+
+    var getPageTotal = function(){
+        return parseInt($(".b_total").text());
+    }
+
+    var disabledButton = function(){
+        var totalPage = getPageTotal();
+        var pageNum = getPageNum();
+        if(pageNum <=1){
+            $(".b_first").attr("disabled","disabled");
+            $(".b_pre").attr("disabled","disabled");
+        }else{
+            $(".b_first").removeAttr("disabled");
+            $(".b_pre").removeAttr("disabled");
+        }
+        if(pageNum >= totalPage){
+            $(".b_next").attr("disabled","disabled");
+            $(".b_last").attr("disabled","disabled");
+        }else{
+            $(".b_next").removeAttr("disabled");
+            $(".b_last").removeAttr("disabled");
+        }
+    }
+    $(function(){
+        disabledButton();
+        $(".b_first").bind("click",function(){
+            $(".i_page_num").val(1);
+            disabledButton();
+            submit(1);
+        });
+        $(".b_pre").bind("click",function(){
+            var value = getPageNum();
+            $(".i_page_num").val(--value);
+            disabledButton();
+            submit(value);
+        });
+
+        $(".b_next").bind("click",function(){
+            var value = getPageNum();
+            $(".i_page_num").val(++value);
+            disabledButton();
+            submit(value);
+        });
+        $(".b_last").bind("click",function(){
+            var value = getPageTotal();
+            $(".i_page_num").val(value);
+            disabledButton();
+            submit(value);
+        });
+    })
+</script>
+<div class="page_footer">
+                    <span class="page_content">
+                        <button id="but_first" class="b_first">首页</button>
+                        <button id="but_pre" class="b_pre">&lt;</button>
+                        <input  id="input_page_num" class="i_page_num" value="$!{goodsResponse.pageNum}" />
+                        <button id="but_next" class="b_next">&gt;</button>
+                        <button id="but_last" class="b_last">尾页</button>
+                    </span>
+    <span id="page_total">共<b class="b_total">$!{goodsResponse.totalPage}</b>页</span>
+</div>

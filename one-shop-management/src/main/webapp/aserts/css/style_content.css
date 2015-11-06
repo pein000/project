@@ -1,0 +1,45 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.content{
+    width:100%;
+    float: left;
+}
+.list_content{
+    width:60%;
+    height: 400px;
+    text-align: center;
+}
+.hot_left_list{
+    width:30%;
+    height:300px;
+    float:left;
+}
+.hot_middle{
+    width:20%;
+    height:300px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+.hot_right_list{
+    width:30%;
+    height:300px;
+    float:left;
+}
+.hot_middle button{
+    width:80px;
+    text-align: center;
+}
+.edit_quot{
+    margin-top: 80px;
+}
+.select_list{
+    border: solid 2px #269abc;
+}
+.submit_but{
+    margin-top: 60px;
+    margin-left: 240px;
+}

@@ -25,6 +25,8 @@ public class Goods {
 
     private String status;
 
+    private String createTime;
+
     public int getId() {
         return id;
     }
@@ -95,5 +97,13 @@ public class Goods {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 }

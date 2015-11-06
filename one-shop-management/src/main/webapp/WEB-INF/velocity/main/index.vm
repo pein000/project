@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>一元购物控管界面</title>
+    <link href=#springUrl("/aserts/css/bootstrap.min.css") rel="stylesheet">
+    <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
+    <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+</head>
+<div class="head">
+    #parse("layout/left_nav.vm")
+    <iframe class="content_iframe" src=#springUrl("/goods/to_goods_index") />
+</div>
+</html>

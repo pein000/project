@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>一元购物控管界面</title>
+    <link href=#springUrl("/aserts/css/bootstrap.min.css") rel="stylesheet">
+    <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
+    <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
+    <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+    <script>
+        $(function () {
+            $("#but_submit_query").bind("click", function () {
+                $("#pageNum").val(1);
+                $("#form_query").submit();
+            });
+
+            $("#but_submit_shelve").bind("click", function () {
+                location.href="#springUrl("/goods/to_shelve")";
+            })
+        })
+
+    </script>
+</head>
+<body>
+<div class="main">
+    <div class="head_page">
+        <p>商品管理 <b> > </b> 详情管理</p>
+    </div>
+    <div class="content">
+        <div class="query_hover">
+            <form id="form_query" class="form-horizontal" role="form" action=#springUrl("/goods/pageable_goods")>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">商品名称</label>
+
+                    <div class="col-sm-10">
+                        <input name="name" value="$!{goodsResponse.name}" type}="text" class="form-control" id="name"
+                               placeholder="请输入商品名称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">商品状态</label>
+
+                    <div class="col-sm-10">
+                        <input name="status" value="$!{goodsResponse.status}" type="text" class="form-control"
+                               id="status"
+                               placeholder="请输入商品状态">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time" class="col-sm-2 control-label">起始日期</label>
+
+                    <div class="col-sm-10">
+                        <input name="beginTime" value="$!{goodsResponse.beginTime}" type="text" class="form-control"
+                               id="status"
+                               placeholder="日期">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time" class="col-sm-2 control-label">结束日期</label>
+
+                    <div class="col-sm-10">
+                        <input name="endTime" value="$!{goodsResponse.endTime}" type="text" class="form-control"
+                               id="status"
+                               placeholder="日期2">
+                    </div>
+                </div>
+                <input id="pageNum" name="pageNum" value="1" type="hidden"/>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button id="but_submit_query" type="button" class="btn btn-default">查找</button>
+
+                        <button id="but_submit_shelve" type="button" class="btn btn-default">上架</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="cash_flow_content">
+            #if(!${goodsList})
+                暂无商品，点击<a href="">上架</a>商品！
+            #else
+                <table class="table table-hover">
+                    <caption>已上架商品</caption>
+                    <thead>
+
+                    <tr>
+                        <th>商品名称</th>
+                        <th>商品描述</th>
+                        <th>商品图片url</th>
+                        <th>商品类型</th>
+                        <th>商品价格</th>
+                        <th>商品总人次</th>
+                        <th>商品当前人次</th>
+                        <th>商品状态</th>
+                        <th>上架时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        #foreach($goods in ${goodsList})
+                        <tr>
+                            <td>${goods.name}</td>
+                            <td>${goods.description}</td>
+                            <td>${goods.outlineUrl}</td>
+                            <td>${goods.type}</td>
+                            <td>${goods.price}</td>
+                            <td>${goods.totalAmount}</td>
+                            <td>${goods.curAmount}</td>
+                            <td>${goods.status}</td>
+                            <td>${goods.createTime}</td>
+                            <td>
+                                <a href=#springUrl("/goods/to_edit?id=${goods.id}")>编辑</a>
+                                <a href=#springUrl("/goods/to_delete?id=${goods.id}")>删除</a>
+                            </td>
+                        </tr>
+                        #end
+                    </tbody>
+                </table>
+                #parse("layout/page_nav.vm")
+            #end
+        </div>
+    </div>
+</div>
+</body>
+</html>

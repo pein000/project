@@ -194,24 +194,22 @@
             </div>
         </div>
     </div>
-</div>
-<div class="right_car">
-    <ul>
-        <li>
-            <a href="${pageContext.request.contextPath}/car/toCar">
-                <img href=""/>
+        <ul class="right_car">
+            <li>
+                <a href="${pageContext.request.contextPath}/car/toCar">
+                    <img href=""/>
 
-                <p>购物车</p>
-            </a>
-        </li>
-        <li>
-            <a>
-                <img href=""/>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img href=""/>
 
-                <p>我的关注</p>
-            </a>
-        </li>
-    </ul>
+                    <p>我的关注</p>
+                </a>
+            </li>
+        </ul>
 </div>
 </body>
 </html>
