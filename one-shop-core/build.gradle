@@ -1,0 +1,41 @@
+buildscript{
+    repositories {
+        mavenLocal()
+        maven {
+            url "http://repo.springsource.org/plugins-release"
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+    }
+}
+
+group 'one-shop-core'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile "org.mybatis:mybatis:3.2.3"
+    compile "org.mybatis:mybatis-spring:1.2.2"
+
+
+    compile "org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-jdbc:1.2.6.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-tomcat:1.2.6.RELEASE"
+
+    compile "com.h2database:h2"
+    compile "mysql:mysql-connector-java"
+    compile "com.alibaba:druid:1.0.9"
+
+    testCompile "junit:junit:4.11"
+
+}

@@ -2,6 +2,8 @@ package com.one.shop.repository.basic;
 
 import com.one.shop.domain.FullGoods;
 import com.one.shop.entity.Goods;
+import com.one.shop.entity.Permission;
+import com.one.shop.entity.Role;
 import com.one.shop.util.RepositoryUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -81,4 +83,48 @@ public class SQLRepository {
 
         return goods;
     }
+
+    protected Role buildRoleDomain(Object[] source) {
+        if (source == null || source.length == 0) {
+            return null;
+        }
+        int id = RepositoryUtils.resolveNullToInteger(source[0]);
+        String  name = RepositoryUtils.resolveNullToString(source[1]);
+        String description = RepositoryUtils.resolveNullToString(source[2]);
+
+        Role role = new Role();
+        role.setId(id);
+        role.setName(name);
+        role.setDescription(description);
+
+        return role;
+    }
+
+    protected Permission buildPermissionDomain(Object[] source) {
+        if (source == null || source.length == 0) {
+            return null;
+        }
+        int id = RepositoryUtils.resolveNullToInteger(source[0]);
+        String name = RepositoryUtils.resolveNullToString(source[1]);
+        String description = RepositoryUtils.resolveNullToString(source[2]);
+
+        Permission permission = new Permission();
+        permission.setId(id);
+        permission.setPermission(name);
+        permission.setDescription(description);
+
+        return permission;
+    }
+
+    protected String buildPermissionValueDomain(Object[] source) {
+        if (source == null || source.length == 0) {
+            return null;
+        }
+        String name = RepositoryUtils.resolveNullToString(source[0]);
+
+        return name;
+    }
+
+
+
 }

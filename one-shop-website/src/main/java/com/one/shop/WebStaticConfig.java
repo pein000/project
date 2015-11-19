@@ -19,6 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages = {"com.one.shop"})
 public class WebStaticConfig extends WebMvcConfigurerAdapter {
 
+    //要以类似于web.xml文件配置的方式来启动Spring应用上下文，此时我们需要声明这样
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         // return super.configure(builder);
         return builder.sources(WebStaticConfig.class);
@@ -29,7 +30,7 @@ public class WebStaticConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //静态资源配置路径
 //        registry.addResourceHandler("/static/**").addResourceLocations("file:d:/static/");
-        registry.addResourceHandler("/static/image/user/**").addResourceLocations("file:d:/static/image/user/");
+        registry.addResourceHandler("/static/image/user/**","/static/image/detail/**").addResourceLocations("file:d:/static/image/user/","file:d:/static/image/detail/");
         //super.addResourceHandlers(registry);
     }
 
@@ -42,6 +43,7 @@ public class WebStaticConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor(new UserLoginInterceptor())
                 .addPathPatterns("/settings/**","/cash/**","/point/**","/car/**","/pay/**");
     }
+
 
 
     public static void main(String[] args) {

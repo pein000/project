@@ -21,6 +21,7 @@ public class User {
 
     private String address;
 
+    private int roleId;
 
     public int getId() {
         return id;
@@ -86,4 +87,11 @@ public class User {
         this.address = address;
     }
 
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
 }

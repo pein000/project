@@ -1,33 +1,56 @@
 <link href=#springUrl("/aserts/css/style_left.css") rel="stylesheet">
 <script>
-    $(function(){
-        $("#but_lef_goods").on("click",function(){
-            $("iframe").attr("src","#springUrl("/goods/to_goods_index")" );
-        });
-        $("#but_lef_type").on("click",function(){
+    $(function () {
+//       显示隐藏类型管理子窗口
+        $("#but_lef_type").on("click", function () {
             var dom = $(".type_list").css("display");
-            if(dom == 'none'){
+            if (dom == 'none') {
                 $(".type_list").css("display", "block");
-            }else{
-                $(".type_list").css("display","none");
+            } else {
+                $(".type_list").css("display", "none");
             }
         });
-        $("#but_left_hot").on("click",function(){
-            $("iframe").attr("src","#springUrl("/type/to_hot")" );
+//        显示隐藏权限管理子窗口
+        $("#but_lef_authority").on("click", function () {
+            var dom = $(".permission_list").css("display");
+            if (dom == 'none') {
+                $(".permission_list").css("display", "block");
+            } else {
+                $(".permission_list").css("display", "none");
+            }
         });
-        $("#but_left_new").on("click",function(){
-            $("iframe").attr("src","#springUrl("/type/to_new")" );
+        $("#but_lef_goods").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/goods/to_goods_index")");
         });
+        $("#but_left_hot").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/type/to_hot")");
+        });
+        $("#but_left_new").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/type/to_new")");
+        });
+        //用户管理
+        $("#but_left_user").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/user/to_user")");
+        });
+        //角色管理
+        $("#but_left_role").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/role/to_role")");
+        });
+        //权限管理
+        $("#but_left_permission").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/permission/to_permission")");
+        });
+
     })
 </script>
 <div class="content_left">
     <div class="list-group">
-        <a  class="list-group-item active">
+        <a class="list-group-item active">
             <h4 class="list-group-item-heading">
                 商品管理
             </h4>
         </a>
-        <button id="but_lef_goods"class="list-group-item">
+        <button id="but_lef_goods" class="list-group-item">
             <h4 class="list-group-item-heading">
                 详情管理
             </h4>
@@ -35,25 +58,25 @@
         <button id="but_lef_type" class="list-group-item">
             <h4 class="list-group-item-heading">
                 类型管理
-                <span class="caret" ></span>
+                <span class="caret"></span>
             </h4>
         </button>
         <div class="type_list">
-        <button id="but_left_hot" class="list-group-item">
-            <h4 class="list-group-item-heading">
-                最热商品
-            </h4>
-        </button>
-        <button id="but_left_new" class="list-group-item">
-            <h4 class="list-group-item-heading">
-                最新商品
-            </h4>
-        </button>
-        <button class="list-group-item">
-            <h4 class="list-group-item-heading">
-                已经揭晓
-            </h4>
-        </button>
+            <button id="but_left_hot" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    最热商品
+                </h4>
+            </button>
+            <button id="but_left_new" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    最新商品
+                </h4>
+            </button>
+            <button class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    已经揭晓
+                </h4>
+            </button>
         </div>
     </div>
 
@@ -80,15 +103,29 @@
                 系统管理
             </h4>
         </button>
-        <button class="list-group-item">
+        <button id="but_left_user" class="list-group-item">
             <h4 class="list-group-item-heading">
-                账户管理
+                用户管理
             </h4>
         </button>
-        <button href="#" class="list-group-item">
+
+        <button id="but_lef_authority" class="list-group-item">
             <h4 class="list-group-item-heading">
-                权限管理
+                授权管理
+                <span class="caret"></span>
             </h4>
         </button>
+        <div class="permission_list">
+            <button id="but_left_role" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    角色管理
+                </h4>
+            </button>
+            <button id="but_left_permission" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    权限管理
+                </h4>
+            </button>
+        </div>
     </div>
 </div>

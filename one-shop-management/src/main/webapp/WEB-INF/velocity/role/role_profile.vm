@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>一元购物控管界面</title>
+    <link href=#springUrl("/aserts/css/bootstrap.min.css") rel="stylesheet">
+    <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
+    <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
+    <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="page-header">
+                <h1>
+                    授权管理 &gt; 角色管理 &gt; 角色列表
+                </h1>
+            </div>
+            <p>
+                <span><strong>角色列表</strong></span>
+            </p>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>角色ID</th>
+                <th>角色名称</th>
+                <th>角色权限</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach(${fullRole} in $!{fullRoleList})
+                <tr>
+                    <td>
+                        ${fullRole.id}
+                    </td>
+                    <td>
+                        ${fullRole.name}
+                    </td>
+                    <td>
+                        ${fullRole.permissions}
+                    </td>
+                    <td>
+                        <div class="span12">
+                            <div class="btn-group">
+                                <button class="btn" type="button"><em class="icon-align-left"></em>
+                                    详情
+                                </button>
+                                <button class="btn" type="button"><em class="icon-align-left"></em>
+                                    编辑
+                                </button>
+                                <button class="btn" type="button"><em class="icon-align-center"></em>
+                                    删除
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                #end
+            </tbody>
+        </table>
+        <div class="view btn_add">
+            <p>
+                <button class="alert alert-info">新增角色 +</button>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

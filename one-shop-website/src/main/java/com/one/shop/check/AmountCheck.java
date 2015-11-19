@@ -9,7 +9,7 @@ public class AmountCheck {
 
     /**
      * 活动金额是否足额
-     * @param StringAmount
+     * @param activeAmount
      * @param totalAmount
      * @return
      */

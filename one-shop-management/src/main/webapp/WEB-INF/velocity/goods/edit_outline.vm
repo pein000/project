@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>一元购物控管界面</title>
+    <link href=#springUrl("/aserts/css/bootstrap.min.css") rel="stylesheet">
+    <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
+    <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
+    <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+    <script>
+        function getFileUrl(sourceId) {
+            var url;
+
+            if (navigator.userAgent.indexOf("MSIE") >= 1) { // IE
+                url = document.getElementById(sourceId).value;
+            } else if(navigator.userAgent.indexOf("Trident") > 0){// IE
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            }else if (navigator.userAgent.indexOf("Firefox") > 0) { // Firefox
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            } else if (navigator.userAgent.indexOf("Chrome") > 0) { // Chrome
+                url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0));
+            }
+            return url;
+        }
+
+        $(function () {
+            $("#input_photo").on("change", function () {
+                var url = getFileUrl("input_photo");
+                $("#photo_display_img").attr("src", url);
+            });
+            $("#btn_picture_detail").on("click", function () {
+                $("#detail_form").submit();
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+<div class="main">
+    <ul class="nav nav-pills nav-justified">
+        <li class="active"><button>概略图编辑</button></li>
+        <li><button id="btn_picture_detail">详细图编辑</button></li>
+    </ul>
+    <div class="head_page">
+        <p>商品管理 <b> > </b> 详情管理 <b> > </b> 图片编辑</p>
+    </div>
+    <div class="content">
+        <div class="query_hover">
+            <p>概略图编辑</p>
+
+            <form id="pic_form" action=#springUrl("/goods/to_upload_outline") method="post" enctype="multipart/form-data">
+                <input name="goodsId" value="$!{goodsId}" type="hidden"/>
+                <input type="file" id="input_photo" name="file">
+                <p class="help-block">
+                    <img id="photo_display_img" src="$!{goodsOutlineUrl}"/>
+                </p>
+                <input type="submit" value="上传" class="btn btn-default" />
+            </form>
+        </div>
+    </div>
+</div>
+<form id="detail_form" action=#springUrl("to_picture_detail") method="post">
+    <input name="goodsId" value="$!{goodsId}" type="hidden"/>
+</form>
+</body>
+</html>

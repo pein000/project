@@ -8,6 +8,14 @@
 .type_list button{
     text-align: right;
 }
+.permission_list{
+    display:none;
+}
+.permission_list button{
+    text-align: right;
+}
+
+
 iframe{
     width:80%;
     height:100%;

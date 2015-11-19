@@ -4,11 +4,12 @@ import com.one.shop.entity.NewGoods;
 import com.one.shop.entity.QNewGoods;
 import com.one.shop.repository.basic.QuerydslRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by pein on 2015/11/5.
  */
-@Controller
+@Repository
 public class NewQueryDslRepository extends QuerydslRepository<NewGoods> {
 
     private QNewGoods qNewGoods = QNewGoods.newGoods;

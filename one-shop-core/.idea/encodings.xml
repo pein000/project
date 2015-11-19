@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/one/shop/DatabaseConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/one/shop/MyBatisApplication.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/one/shop/domain/Goods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/one/shop/service/RevealService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/one/shop/settings/JdbcConnectionSettings.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/schema.sql" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

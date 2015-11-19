@@ -1,17 +1,13 @@
 package com.one.shop.repository;
 
-import com.mysema.query.jpa.impl.JPAQueryFactory;
-import com.mysema.query.jpa.impl.JPAUpdateClause;
 import com.mysema.query.types.Path;
 import com.one.shop.entity.Goods;
 import com.one.shop.entity.QGoods;
 import com.one.shop.repository.basic.QuerydslRepository;
 import com.one.shop.request.GoodsRequest;
 import com.one.shop.util.RepositoryUtils;
-import org.hibernate.annotations.SQLInsert;
 import org.springframework.data.jpa.repository.support.QueryDslRepositorySupport;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +62,13 @@ public class GoodsQueryDslRepository extends QuerydslRepository<Goods> {
         this.update(qGoods)
                 .set(buildPathList(qGoods), buildValueList(goods))
                 .where(qGoods.id.eq(goods.getId()))
+                .execute();
+    }
+
+    public void updateGoodsOutlineUrl(String outlineUrl,int goodsId) {
+        this.update(qGoods)
+                .set(qGoods.outlineUrl, outlineUrl)
+                .where(qGoods.id.eq(goodsId))
                 .execute();
     }
 

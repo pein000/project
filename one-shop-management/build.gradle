@@ -38,7 +38,7 @@ dependencies {
     compile libs.jackson
     compile libs.jdbc
     compile libs.jodd
-//    compile libs.querydsl
-//    querydslapt libs.querydslapt
+    compile libs.shiro
+    compile libs.velocity
     testCompile libs.test
 }

@@ -4,6 +4,7 @@ import com.one.shop.domain.FullGoods;
 import com.one.shop.entity.Goods;
 import com.one.shop.repository.basic.SQLRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.Query;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by pein on 2015/11/4.
  */
-@Controller
+@Repository
 public class HotSQLRepository extends SQLRepository{
 
     public List<FullGoods> findAllDescTime() {

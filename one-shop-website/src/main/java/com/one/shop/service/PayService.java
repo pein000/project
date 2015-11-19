@@ -1,9 +1,11 @@
 package com.one.shop.service;
 
 import com.one.shop.check.AmountCheck;
+import com.one.shop.consts.SystemVariable;
 import com.one.shop.domain.*;
 import com.one.shop.entity.CashFlowEntity;
 import com.one.shop.entity.GoodsFlowEntity;
+import com.one.shop.entity.MarkerEntity;
 import com.one.shop.entity.PointFlowEntity;
 import com.one.shop.enums.IncomePath;
 import com.one.shop.enums.PointType;
@@ -13,10 +15,7 @@ import com.one.shop.repository.CashFlowRepository;
 import com.one.shop.repository.GoodsFlowRepository;
 import com.one.shop.repository.GoodsRepository;
 import com.one.shop.repository.PointFlowRepository;
-import com.one.shop.repository.impl.CarRepositoryImpl;
-import com.one.shop.repository.impl.CashAccountRepositoryImpl;
-import com.one.shop.repository.impl.GoodsRepositoryImpl;
-import com.one.shop.repository.impl.PointAccountRepositoryImpl;
+import com.one.shop.repository.impl.*;
 import com.one.shop.util.DateUtils;
 import com.one.shop.util.ShopUtils;
 import org.slf4j.Logger;
@@ -26,6 +25,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,6 +58,8 @@ public class PayService {
     @Autowired
     private GoodsFlowRepository goodsFlowRepository;
 
+    @Autowired
+    private MarkRepositoryImpl markRepository;
     /**
      * 支付接口
      * 1 积分、积分流水
@@ -66,6 +68,7 @@ public class PayService {
      * 4 更新购物车，删除购物车记录
      * 5 添加购物流水
      * 6 更新商品当前数量
+     * 7 插入购物码
      * @param pointAccount
      * @param cashAccount
      * @param payAmount
@@ -89,6 +92,7 @@ public class PayService {
         this.deleteCar(user);
         this.decreaseGoodsAmount(fullCarList);
         this.insertGoodsFlow(fullCarList);
+        this.insertMarker(fullCarList);
     }
 
     private void payPointAcccount(PointAccount pointAccount, PayAmount payAmount) {
@@ -179,5 +183,29 @@ public class PayService {
         }
     }
 
+    private void insertMarker(FullCarList fullCarList){
+        FullCar[] fullCars = fullCarList.getFullCars();
+        for (FullCar fullCar : fullCars) {
+            markRepository.insertMark(generateMarkerList(fullCar));
+        }
+    }
 
+    /**
+     * 生成购物码
+     * @param fullCar
+     * @return
+     */
+    private List<MarkerEntity> generateMarkerList(FullCar fullCar){
+        List<MarkerEntity> markerEntityList = new ArrayList<MarkerEntity>();
+        for (int index = 1; index <= fullCar.getQuantity(); index++) {
+            MarkerEntity markerEntity = new MarkerEntity();
+            markerEntity.setGoodsId(fullCar.getGoodsId());
+            markerEntity.setUserId(fullCar.getUserId());
+            markerEntity.setMarker(String.valueOf(SystemVariable.SYSTEM_BASIC_MARKER +fullCar.getCurAmount()+ index));
+            markerEntity.setCreateTime(DateUtils.getCurrentDate("yyyy-MM-dd HH:mm:ss"));
+            markerEntityList.add(markerEntity);
+        }
+
+        return markerEntityList;
+    }
 }

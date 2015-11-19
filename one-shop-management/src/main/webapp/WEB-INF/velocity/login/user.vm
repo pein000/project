@@ -1,0 +1,80 @@
+<html>
+<h1>
+    用户列表--
+    <a href="/user/add">添加用户</a>
+    --
+    <a href="/loginout">退出</a>
+</h1>
+<h2>权限列表</h2>
+##这种必须使用jsp的tag标签
+##<shiro:authenticated>用户已经登录显示此内容</shiro:authenticated>
+##<shiro:hasRole name="manager">manager角色登录显示此内容</shiro:hasRole>
+##<shiro:hasRole name="admin">admin角色登录显示此内容</shiro:hasRole>
+##<shiro:hasRole name="normal">normal角色登录显示此内容</shiro:hasRole>
+##<shiro:hasAnyRoles name="manager,admin">**manager or admin 角色登录显示此内容</shiro:hasAnyRoles>
+##<shiro:principal>显示当前登录用户名</shiro:principal>
+##<shiro:hasPermission name="add">add权限用户显示此内容</shiro:hasPermission>
+##<shiro:hasPermission name="user:query">query权限用户显示此内容</shiro:hasPermission>
+##<shiro:lacksPermission name="user:del">不具有user:del权限的用户显示此内容</shiro:lacksPermission>
+
+##velocity使用了自定义的shiro
+        $shiro.isAuthenticated()--
+        $shiro.hasPermission("delete")
+    #if($shiro.isAuthenticated())
+        用户已经登录显示此内容
+        <br>
+    #end
+    #if($shiro.hasRole("manager"))
+         manager角色登录显示此内容
+        <br>
+    #end
+    #if($shiro.hasRole("admin"))
+        admin角色登录显示此内容
+        <br>
+    #end
+    #if($shiro.hasRole("normal"))
+        normal角色登录显示此内容
+        <br>
+    #end
+    #if($shiro.hasAnyRoles("manager,normal"))
+        manager or normal角色登录显示此内容
+        <br>
+    #end
+        显示当前用户用户名：$shiro.getPrincipal()
+        <br>
+    权限一共有delete、update、add、query
+    <br>
+    #if($shiro.hasPermission("delete"))
+        delete权限用户显示此内容
+        <br>
+    #end
+    #if($shiro.hasPermission("update"))
+        update权限用户显示此内容
+        <br>
+    #end
+    #if($shiro.hasPermission("add"))
+        add权限用户显示此内容
+        <br>
+    #end
+    #if($shiro.hasPermission("query"))
+        query权限用户显示此内容
+        <br>
+    #end
+    #if($shiro.lacksPermission("add"))
+        不具备add权限用户显示此内容
+        <br>
+    #end
+
+
+
+<ul>
+    #foreach(${user} in ${userList})
+    <li>用户名：${user.username}---
+        密码：${user.password}---
+        <a href="/user/edit?userId=${user.id}">修改用户</a>---
+        <a href="/user/del?userId=${user.id}">删除用户</a>
+    </li>
+    #end
+</ul>
+<img alt="" src="/static/img1.JPG"/>
+</html>

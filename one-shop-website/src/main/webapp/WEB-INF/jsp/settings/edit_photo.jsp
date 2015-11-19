@@ -32,10 +32,8 @@
 
         $(function () {
             $("#input_photo").bind("change", function () {
-                var dom = $(this);
-                var dom1 = $("#input_photo");
                 var url = getFileUrl("input_photo");
-                var photoImg = $("#photo_display_img").attr("src", url);
+                $("#photo_display_img").attr("src", url);
             });
         })
 

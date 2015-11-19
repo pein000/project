@@ -131,7 +131,7 @@
         <p>商品详情</p>
         <c:forEach items="${pictureGoodsURLList}" var="picUrl" varStatus="status">
             <p>
-                <img src="${pageContext.request.contextPath}/static/image/${picUrl.url}">
+                <img src="${picUrl.url}">
             </p>
         </c:forEach>
     </div>

@@ -2,7 +2,6 @@ package com.one.shop.repository.basic;
 
 import com.mysema.query.jpa.JPQLQuery;
 import com.mysema.query.types.EntityPath;
-import com.one.shop.util.ShopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
 import org.springframework.data.jpa.repository.support.QueryDslRepositorySupport;

@@ -6,4 +6,6 @@ package com.one.shop.consts;
 public class SystemVariable {
     /*session中user对象的key值*/
     public static final String SESSION_KEY_USER = "user";
+
+    public static final int SYSTEM_BASIC_MARKER = 100000;
 }

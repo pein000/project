@@ -8,7 +8,7 @@
     <script src=#springUrl("/aserts/js/content.js")></script>
     <script>
         $(function(){
-            $("#but_reset_hot").bind("click",function(){
+            $("#but_reset_hot").on("click",function(){
                 var dom = $(".select_left option")
                 dom.each(function(index){
                     var hid = $(this).attr("hid");
