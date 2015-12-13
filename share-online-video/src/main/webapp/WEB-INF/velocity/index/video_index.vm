@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    #parse("layout/head_resources.vm")
+<script>
+    j(function () {
+        j("#btn_upload").click(function () {
+            location.href = "#springUrl("/upload/to_upload")";
+        });
+    });
+</script>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <button class="btn btn-block" id="btn_upload" type="button">上传</button>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <ul class="unstyled inline">
+                #foreach(${classify} in ${classifyList})
+                    <li>
+                        $!{classify.name}
+                    </li>
+                #end
+            </ul>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <ul class="unstyled">
+                #foreach(${videoEntity} in ${videoEntityList})
+                    <fieldset>
+                        <li>
+                            <fieldset>
+                                <div>
+                                    ${videoEntity.title}
+                                </div>
+                                <div>
+                                    <a href="#springUrl("/play/to_play_video?videoUrl=${videoEntity.videoUrl}")">
+                                        <img src="${videoEntity.imageUrl}">
+                                    </a>
+                                </div>
+                                <div>
+                                    ${videoEntity.description}
+                                </div>
+                        </li>
+                    </fieldset>
+                #end
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

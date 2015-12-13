@@ -1,0 +1,50 @@
+ext {
+    springBootVersion = '1.2.6.RELEASE'
+    jacksonVersion = '2.5.2'
+    jdbcDriverVersion = '5.1.31'
+    joddVersion = '3.6.5'
+    querydslVersion = '3.6.1'
+    shiroVersion = '1.2.4'
+    ehcacheVersion = '2.6.9'
+    velocityVersion = '1.5'
+    velocityToolsVersion = '2.0-beta1'
+    fileUploadVersion = '1.2.2'
+    libs = [
+            springBoot: [
+                    "org.springframework.boot:spring-boot-starter-web:$springBootVersion",
+                    "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion",
+                    "org.springframework.boot:spring-boot-starter-velocity:$springBootVersion"
+            ],
+            jackson   : [
+                    "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+                    "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+                    "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+            ],
+            jdbc      : [
+                    "mysql:mysql-connector-java:$jdbcDriverVersion"
+            ],
+            jodd      : [
+                    "org.jodd:jodd-bean:$joddVersion"
+            ],
+            shiro     : [
+                    "org.apache.shiro:shiro-ehcache:$shiroVersion",
+                    "org.apache.shiro:shiro-web:$shiroVersion",
+                    "org.apache.shiro:shiro-spring:$shiroVersion",
+                    "org.apache.shiro:shiro-core:$shiroVersion",
+                    "net.sf.ehcache:ehcache-core:$ehcacheVersion",
+                    "velocity-tools:velocity-tools:$velocityToolsVersion"
+            ],
+            velocity    :   [
+                    "velocity:velocity:$velocityVersion"
+            ],
+            fileupload  :   [
+                    "commons-fileupload:commons-fileupload:${fileUploadVersion}"
+            ],
+            test      : [
+                    "junit:junit:4.11"
+            ]
+
+
+    ]
+
+}

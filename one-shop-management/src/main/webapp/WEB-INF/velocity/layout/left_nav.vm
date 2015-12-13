@@ -28,6 +28,11 @@
         $("#but_left_new").on("click", function () {
             $("iframe").attr("src", "#springUrl("/type/to_new")");
         });
+        //最新揭晓
+        $("#but_left_revealed").on("click", function () {
+            $("iframe").attr("src", "#springUrl("/type/to_revealed")");
+        });
+
         //用户管理
         $("#but_left_user").on("click", function () {
             $("iframe").attr("src", "#springUrl("/user/to_user")");
@@ -44,42 +49,43 @@
     })
 </script>
 <div class="content_left">
-    <div class="list-group">
-        <a class="list-group-item active">
-            <h4 class="list-group-item-heading">
-                商品管理
-            </h4>
-        </a>
-        <button id="but_lef_goods" class="list-group-item">
-            <h4 class="list-group-item-heading">
-                详情管理
-            </h4>
-        </button>
-        <button id="but_lef_type" class="list-group-item">
-            <h4 class="list-group-item-heading">
-                类型管理
-                <span class="caret"></span>
-            </h4>
-        </button>
-        <div class="type_list">
-            <button id="but_left_hot" class="list-group-item">
+    #if($shiro.hasAnyPermissions("goods:delete,goods:edit,goods:add,goods:query"))
+        <div class="list-group">
+            <a class="list-group-item active">
                 <h4 class="list-group-item-heading">
-                    最热商品
+                    商品管理
+                </h4>
+            </a>
+            <button id="but_lef_goods" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    详情管理
                 </h4>
             </button>
-            <button id="but_left_new" class="list-group-item">
+            <button id="but_lef_type" class="list-group-item">
                 <h4 class="list-group-item-heading">
-                    最新商品
+                    类型管理
+                    <span class="caret"></span>
                 </h4>
             </button>
-            <button class="list-group-item">
-                <h4 class="list-group-item-heading">
-                    已经揭晓
-                </h4>
-            </button>
+            <div class="type_list">
+                <button id="but_left_hot" class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        最热商品
+                    </h4>
+                </button>
+                <button id="but_left_new" class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        最新商品
+                    </h4>
+                </button>
+                <button id="but_left_revealed"  class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        已经揭晓
+                    </h4>
+                </button>
+            </div>
         </div>
-    </div>
-
+    #end
     <div class="list-group">
         <button href="#" class="list-group-item active">
             <h4 class="list-group-item-heading">
@@ -97,35 +103,37 @@
             </h4>
         </button>
     </div>
-    <div class="list-group">
-        <button class="list-group-item active">
-            <h4 class="list-group-item-heading">
-                系统管理
-            </h4>
-        </button>
-        <button id="but_left_user" class="list-group-item">
-            <h4 class="list-group-item-heading">
-                用户管理
-            </h4>
-        </button>
+    #if($shiro.hasAnyPermissions("user:delete,user:edit,user:add,user:query"))
+        <div class="list-group">
+            <button class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                    系统管理
+                </h4>
+            </button>
+            <button id="but_left_user" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    用户管理
+                </h4>
+            </button>
 
-        <button id="but_lef_authority" class="list-group-item">
-            <h4 class="list-group-item-heading">
-                授权管理
-                <span class="caret"></span>
-            </h4>
-        </button>
-        <div class="permission_list">
-            <button id="but_left_role" class="list-group-item">
+            <button id="but_lef_authority" class="list-group-item">
                 <h4 class="list-group-item-heading">
-                    角色管理
+                    授权管理
+                    <span class="caret"></span>
                 </h4>
             </button>
-            <button id="but_left_permission" class="list-group-item">
-                <h4 class="list-group-item-heading">
-                    权限管理
-                </h4>
-            </button>
+            <div class="permission_list">
+                <button id="but_left_role" class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        角色管理
+                    </h4>
+                </button>
+                <button id="but_left_permission" class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        权限管理
+                    </h4>
+                </button>
+            </div>
         </div>
-    </div>
+    #end
 </div>

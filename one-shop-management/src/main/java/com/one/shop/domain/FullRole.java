@@ -12,6 +12,9 @@ public class FullRole extends Role{
      */
     private String permissions;
 
+    public FullRole() {
+    }
+
     public FullRole(Role role, String permissions) {
         this.setId(role.getId());
         this.setName(role.getName());

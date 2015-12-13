@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    #parse("layout/head_resources.vm")
+<script>
+
+    j(function () {
+        j("#btn_video_upload").on("click", function () {
+            var form = j("#form_file");
+            var file = j("#file_video_upload")[0].files[0];
+            var formData = new FormData();//用form 表单直接 构造formData 对象; 就不需要下面的append 方法来为表单进行赋值了。
+            var name = file.name;
+            var type  = file.type;
+            formData.append("name", name);
+            formData.append("file", file);
+            //var formData = new FormData();//构造空对象，下面用append 方法赋值。
+            //          formData.append("policy", "");
+            //          formData.append("signature", "");
+            //          formData.append("file", $("#file_upload")[0].files[0]);
+            j.ajax({
+                url: "#springUrl("/upload/to_upload_file")",
+                type: 'POST',
+                data: formData,
+
+                /**
+                 * 必须false才会避开jQuery对 formdata 的默认处理
+                 * XMLHttpRequest会对 formdata 进行正确的处理
+                 */
+                processData: false,
+                /**
+                 *必须false才会自动加上正确的Content-Type
+                 */
+                contentType: false,
+                success: function (responseStr) {
+                    alert("成功：" + JSON.stringify(responseStr));
+                },
+                error: function (responseStr) {
+                    alert("失败:" + JSON.stringify(responseStr));//将    json对象    转成    json字符串。
+                }
+            });
+
+        });
+    });
+</script>
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <form id="form_file" enctype="multipart/form-data" method="post">
+                <fieldset>
+                    <legend>上传视频</legend>
+                    <label>上传视频</label>
+                    <input id="file_video_upload" type="file"/>
+                    <button id="btn_video_upload">上传</button>
+                </fieldset>
+            </form>
+            <form>
+
+
+                <legend>表单项</legend>
+                <label>表签名</label><input type="text"/> <span class="help-block">这里填写帮助信息.</span> <label
+                    class="checkbox"><input type="checkbox"/> 勾选同意</label>
+
+                <button class="btn" type="submit">提交</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

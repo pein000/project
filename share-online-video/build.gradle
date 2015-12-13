@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        mavenLocal()
+
+        maven {
+            url "http://repo.springsource.org/plugins-release"
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+        classpath("com.ewerk.gradle.plugins:querydsl-plugin:1.0.3")
+    }
+}
+
+group 'share-online-group'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'war'
+apply from: "$rootDir/dependencies.gradle"
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenLocal()
+
+    maven {
+        url "http://repo.spring.io/release"
+    }
+
+    mavenCentral()
+}
+
+dependencies {
+    compile libs.springBoot
+    compile libs.jackson
+    compile libs.jdbc
+    compile libs.jodd
+    compile libs.shiro
+    compile libs.velocity
+    compile libs.fileupload
+    testCompile libs.test
+}

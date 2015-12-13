@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    #parse("layout/head_resources.vm")
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <form id="form_video_item" action="#springUrl("/upload/to_upload_video_item")" method="post">
+                <legend>上传视频</legend>
+                <fieldset>
+                    <label>视频标题</label>
+                    <input type="text" name="title" value="$!{response.fileName}"/>
+                </fieldset>
+                <fieldset>
+                    <label>简介</label>
+                    <input type="text" name="description"/>
+                </fieldset>
+                <fieldset>
+                    <label>类别</label>
+                    <select id="select_classify">
+                        #foreach(${classify} in ${classifyList})
+                            <option value="${classify}">${classify.name}</option>
+                        #end
+                        <script>
+                            j(function () {
+                                var chooseClassify = j("#select_classify").children(":selected").val();
+                                j("#input_classify").val(chooseClassify);
+                            });
+                            j("#select_classify").change(function () {
+                                var chooseClassify = j(this).children(":selected").val();
+                                j("#input_classify").val(chooseClassify);
+                            });
+                        </script>
+                    </select>
+                </fieldset>
+                <input id="input_classify" type="hidden" name="classify">
+                <input type="hidden" name="userId" value="">
+                <input type="hidden" name="videoUrl" value="$!{response.fullName}">
+                <input type="hidden" name="imageUrl" value="$!{response.imageName}">
+                <input type="submit" value="保存">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    #parse("layout/head_resources.vm")
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <fieldset>
+                <legend>上传视频</legend>
+                <label>上传视频</label>
+
+                <form id="form_file" action="#springUrl("/upload/to_upload_file")"
+                      enctype="multipart/form-data" method="post">
+                    <input id="file_video_upload" type="file" name="file"/>
+                    <button id="btn_video_upload" type="submit">上传</button>
+                </form>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

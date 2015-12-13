@@ -1,6 +1,7 @@
 package com.one.shop.repository.basic;
 
 import com.one.shop.domain.FullGoods;
+import com.one.shop.domain.FullRevealed;
 import com.one.shop.entity.Goods;
 import com.one.shop.entity.Permission;
 import com.one.shop.entity.Role;
@@ -125,6 +126,45 @@ public class SQLRepository {
         return name;
     }
 
+    protected FullRevealed buildFullRevealedDomain(Object[] source){
+        if (source == null || source.length == 0) {
+            return null;
+        }
 
+        String rewardMarker = RepositoryUtils.resolveNullToString(source[0]);
+        int userId = RepositoryUtils.resolveNullToInteger(source[1]);
+        String userName = RepositoryUtils.resolveNullToString(source[2]);
+        String userSign = RepositoryUtils.resolveNullToString(source[3]);
+        String userPhone = RepositoryUtils.resolveNullToString(source[4]);
+        String userEmail = RepositoryUtils.resolveNullToString(source[5]);
+        String userAddress = RepositoryUtils.resolveNullToString(source[6]);
+        int goodsId = RepositoryUtils.resolveNullToInteger(source[7]);
+        String goodsName = RepositoryUtils.resolveNullToString(source[8]);
+        String goodsDescription = RepositoryUtils.resolveNullToString(source[9]);
+        int goodsType = RepositoryUtils.resolveNullToInteger(source[10]);
+        BigDecimal goodsPrice = RepositoryUtils.resolveNullToBigDecimal(source[11]);
+        int goodsTotalAmount = RepositoryUtils.resolveNullToInteger(source[12]);
+        int goodsCurAmount = RepositoryUtils.resolveNullToInteger(source[13]);
+        String goodsStatus = RepositoryUtils.resolveNullToString(source[14]);
+
+        FullRevealed fullRevealed = new FullRevealed();
+        fullRevealed.setRewardMarker(rewardMarker);
+        fullRevealed.setUserId(userId);
+        fullRevealed.setUserName(userName);
+        fullRevealed.setUserSign(userSign);
+        fullRevealed.setUserPhone(userPhone);
+        fullRevealed.setUserEmail(userEmail);
+        fullRevealed.setUserAddress(userAddress);
+        fullRevealed.setGoodsId(goodsId);
+        fullRevealed.setGoodsName(goodsName);
+        fullRevealed.setGoodsDescription(goodsDescription);
+        fullRevealed.setGoodsType(goodsType);
+        fullRevealed.setGoodsPrice(goodsPrice);
+        fullRevealed.setGoodsTotalAmount(goodsTotalAmount);
+        fullRevealed.setGoodsCurAmount(goodsCurAmount);
+        fullRevealed.setGoodsStatus(goodsStatus);
+
+        return fullRevealed;
+    }
 
 }

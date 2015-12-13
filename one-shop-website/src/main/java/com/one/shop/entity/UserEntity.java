@@ -35,9 +35,6 @@ public class UserEntity {
     @Column(name = "ADDRESS")
     private String address;
 
-    @Column(name = "ROLE_ID")
-    private int roleId;
-
     public int getId() {
         return id;
     }
@@ -102,11 +99,4 @@ public class UserEntity {
         this.address = address;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 }

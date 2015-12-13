@@ -29,8 +29,8 @@ $(function(){
         $(options).each(function(index){
             var option = options[index];
             var aid = $(option).attr("aid");
-            var b = $(".select_up option[uid='"+aid+"'");
-            if($(b).length > 0){
+            var dom = $(".select_up option[uid='"+aid+"'");
+            if($(dom).length > 0){
                 return;
             }
             $(".select_up").append(option);
@@ -41,8 +41,8 @@ $(function(){
         $(options).each(function(index){
             var option = options[index];
             var uid = $(option).attr("uid");
-            var b = $(".select_up option[aid='"+uid+"'");
-            if($(b).length > 0){
+            var dom = $(".select_up option[aid='"+uid+"'");
+            if($(dom).length > 0){
                 return;
             }
             $(".select_down").append(option);

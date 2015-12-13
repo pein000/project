@@ -20,6 +20,18 @@ public class User {
     @Column(name = "PASSWORD")
     private String password;
 
+    /**
+     * 创建者ID
+     */
+    @Column(name = "CREATOR_ID")
+    private String creatorId;
+
+    /**
+     * 创建者名称
+     */
+    @Column(name = "CREATOR_NAME")
+    private String creatorName;
+
     @Column(name = "IS_DELETED")
     private String isDeleted;
     /**
@@ -51,6 +63,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    public String getCreatorName() {
+        return creatorName;
+    }
+
+    public void setCreatorName(String creatorName) {
+        this.creatorName = creatorName;
     }
 
     public String getIsDeleted() {

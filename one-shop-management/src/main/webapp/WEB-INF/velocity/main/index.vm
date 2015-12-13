@@ -7,17 +7,18 @@
     <script>
         $(function(){
             $("#btn_login_out").on("click",function(){
-
+                location.href = "#springUrl("/login/to_login_out")";
             });
         })
     </script>
 </head>
 <div class="head">
     <div class="top_content">
-        欢迎${user.name}！ <b><button id="btn_login_out">退出</button></b>
+        欢迎${administrator.name}！ <b><button id="btn_login_out">退出</button></b>
         <form id="login_out_form" action="#springUrl("/login/to_login_out")" method="post">
-            <input type="hidden" name="name" value="${user.name}" />
-            <input type="hidden" name="password" value="${user.password}" />
+            <input type="hidden" name="id" value="$!{administrator.id}" />
+            <input type="hidden" name="name" value="$!{administrator.name}" />
+            <input type="hidden" name="password" value="$!{administrator.password}" />
         </form>
     </div>
     #parse("layout/left_nav.vm")

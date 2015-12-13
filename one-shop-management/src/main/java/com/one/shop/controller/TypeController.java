@@ -1,9 +1,11 @@
 package com.one.shop.controller;
 
 import com.one.shop.domain.FullGoods;
+import com.one.shop.domain.FullRevealed;
 import com.one.shop.entity.Goods;
 import com.one.shop.entity.HotGoods;
 import com.one.shop.entity.NewGoods;
+import com.one.shop.entity.RevealedGoods;
 import com.one.shop.request.HotGoodsRequest;
 import com.one.shop.request.NewGoodsRequest;
 import com.one.shop.service.TypeManagerService;
@@ -74,5 +76,21 @@ public class TypeController {
         typeManagerService.updateNewGoodsList(newGoodsList);
 
         return "/type/success_update_new";
+    }
+
+    @RequestMapping(value = "to_revealed")
+    public ModelAndView toRevealed(ModelMap modelMap){
+        List<RevealedGoods> revealedGoodsList = typeManagerService.fundAllRevealedDescTime();
+        modelMap.put("revealedGoodsList", revealedGoodsList);
+
+        return new ModelAndView("/type/revealed_profile",modelMap);
+    }
+
+    @RequestMapping(value = "to_detail_revealed")
+    public ModelAndView toDetailRevealed(int id, ModelMap modelMap) {
+        FullRevealed fullRevealed = typeManagerService.findFullRevealedById(id);
+        modelMap.put("fullRevealed", fullRevealed);
+
+        return new ModelAndView("/type/revealed_detail",modelMap);
     }
 }

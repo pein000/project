@@ -20,7 +20,7 @@ public class RevealScheduler {
     @Autowired
     private RevealService revealService;
 
-    @Scheduled(cron = "0 0/20 * * * *")
+    @Scheduled(cron = "0 0/1 * * * *")
     public void execute() {
         LOGGER.info("begin to  reveal goods. ");
         revealService.revealGoods();

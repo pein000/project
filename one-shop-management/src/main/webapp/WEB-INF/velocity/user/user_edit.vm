@@ -10,6 +10,18 @@
     <script>
         $(function(){
             $("#btn_add_finish").on("click",function(){
+                var roles="";
+                var options = $(".select_up option");
+                $(options).each(function(index){
+                    var id = $(this).attr("uid") !=null?$(this).attr("uid"):$(this).attr("aid");
+                    if(index == options.length-1){
+                        roles += id;
+                    }else{
+                        roles += id+",";
+                    }
+
+                })
+                $("#input_roles").val(roles);
                 $("#user_form").submit();
             });
         })
@@ -26,12 +38,14 @@
     </div>
 </div>
 <div class="login_content">
-    <form id="user_form" class="form-horizontal" role="form" action="#springUrl("/user/edit_user")" method="post">
+    <form id="user_form" class="form-horizontal" role="form" action="#springUrl("/user/edit_operate_user")" method="post">
         <div class="form-group">
             <label for="firstname" class="col-sm-2 control-label">用户ID</label>
 
             <div class="col-sm-10">
-                <input type="text" disabled name="id" class="form-control" id="firstname"
+                <input type="text" disabled class="form-control" id="firstname"
+                       value="${user.id}">
+                <input type="hidden" name="id" class="form-control" id="firstname"
                        value="${user.id}">
             </div>
         </div>
@@ -64,6 +78,7 @@
                 </select>
             </div>
         </div>
+        <input id="input_roles" type="hidden" name="roles" />
     </form>
     <p>
         <button class="but_to_up"> ︿</button>

@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>一元购物控管界面</title>
+    <link href=#springUrl("/aserts/css/bootstrap.min.css") rel="stylesheet">
+    <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
+    <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
+    <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+    <script>var localPath = "#springUrl('')";</script>
+    <script>
+        $(function(){
+            $(".btn_user_detail").on("click",function(){
+                var revealedId = $(this).attr("revealedId");
+                location.href=localPath+"/type/to_detail_revealed?id="+revealedId;
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="page-header">
+                <h1>
+                    类型管理 &gt; 揭晓商品管理 &gt; 揭晓商品列表
+                </h1>
+            </div>
+            <p>
+                <span><strong>揭晓商品列表</strong></span>
+            </p>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>揭晓商品ID</th>
+                <th>商品ID</th>
+                <th>揭晓时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach(${revealedGoods} in ${revealedGoodsList})
+                <tr>
+                    <td>
+                        $!{revealedGoods.id}
+                    </td>
+                    <td>
+                        $!{revealedGoods.goodsId}
+                    </td>
+                    <td>
+                        $!{revealedGoods.createTime}
+                    </td>
+                    <td>
+                        <div class="span12">
+                            <div class="btn-group">
+                                <button class="btn btn_user_detail" revealedId="$!{revealedGoods.id}" type="button"><em class="icon-align-left"></em>
+                                    详情
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                #end
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by pein on 2015/11/16.
  */
@@ -32,7 +34,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "login/user_login")
-    public ModelAndView userLogin(String name,String password,ModelMap modelMap){
+    public ModelAndView userLogin(String name,String password,HttpSession session, ModelMap modelMap){
         LOGGER.info("begin to login . name = {},password={}",name,password);
         User result = loginService.findUser(generateUser(name, password));
         if (result == null) {
@@ -40,10 +42,17 @@ public class LoginController {
             return new ModelAndView("/login/login");
         }
         SecurityUtils.getSubject().login(new UsernamePasswordToken(result.getName(),result.getPassword()));
-        modelMap.put("user", result);
+//        modelMap.put("user", result);
+        session.setAttribute("administrator", result);
         LOGGER.info("success to login . user = {}", JSONUtils.toJson(result));
-//        return new ModelAndView("/login/user",modelMap);
         return new ModelAndView("/main/index",modelMap);
+    }
+
+
+    @RequestMapping(value = "login/to_login_out")
+    public String toLoginOut(HttpSession session){
+        session.invalidate();
+        return "/login/login";
     }
 
     public ModelAndView user(User user, ModelMap modelMap) {

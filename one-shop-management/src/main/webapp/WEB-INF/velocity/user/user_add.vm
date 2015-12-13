@@ -15,6 +15,15 @@
     </script>
 </head>
 <body>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="page-header">
+            <h1>
+                用户管理 &gt; 用户列表 &gt; 添加用户
+            </h1>
+        </div>
+    </div>
+</div>
 <div class="login_content">
     <form id="user_form" class="form-horizontal" role="form" action="#springUrl("/user/add_user")" method="post">
         <div class="form-group">
@@ -32,6 +41,8 @@
                 <input type="password" name="password" class="form-control" id="lastname"
                        placeholder="请输入密码">
             </div>
+            <input type="hidden" name="creatorId" value="$!{administrator.id}">
+            <input type="hidden" name="creatorName" value="$!{administrator.name}">
         </div>
 
         <div class="form-group">

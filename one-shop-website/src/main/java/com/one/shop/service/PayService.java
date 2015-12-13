@@ -13,7 +13,6 @@ import com.one.shop.enums.TradePath;
 import com.one.shop.enums.TradeType;
 import com.one.shop.repository.CashFlowRepository;
 import com.one.shop.repository.GoodsFlowRepository;
-import com.one.shop.repository.GoodsRepository;
 import com.one.shop.repository.PointFlowRepository;
 import com.one.shop.repository.impl.*;
 import com.one.shop.util.DateUtils;

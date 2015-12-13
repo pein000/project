@@ -5,6 +5,47 @@
     <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
     <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
     <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+    <script>var localPath = "#springUrl('')";</script>
+    <script>
+        $(function () {
+            //添加用户
+            $("#btn_role_add").on("click", function () {
+                location.href = "#springUrl("/role/to_add_role")";
+            });
+            //用户详情
+            $(".btn_role_detail").on("click", function () {
+                var roleId = $(this).attr("roleId");
+                var path = "/role/to_detail_role?roleId=" + roleId;
+                location.href = localPath + path;
+            });
+            //编辑用户
+            $(".btn_role_edit").on("click", function () {
+                var roleId = $(this).attr("roleId");
+                var path = "/role/to_edit_role?roleId=" + roleId;
+                location.href = localPath + path;
+            });
+            //删除用户
+            $(".btn_role_delete").on("click", function () {
+                var roleId = $(this).attr("roleId");
+                var path = "/role/to_delete_role?roleId=" + roleId;
+                location.href = localPath + path;
+            });
+
+            //显示全部
+            $(".btn_list_display").on("click",function(){
+                var permissions = $(this).attr("permissions");
+                var dataContent = "";
+                var permissionArray = permissions.split(",");
+                for(var key in permissionArray){
+                    dataContent +=permissionArray[key]+","+ "\n";
+                }
+                $(this).attr("data-content", dataContent);
+            });
+
+            $("[data-toggle='popover']").popover();
+
+        })
+    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -34,24 +75,38 @@
                 #foreach(${fullRole} in $!{fullRoleList})
                 <tr>
                     <td>
-                        ${fullRole.id}
+                        $!{fullRole.id}
                     </td>
                     <td>
-                        ${fullRole.name}
+                        $!{fullRole.name}
                     </td>
                     <td>
-                        ${fullRole.permissions}
+                        #if($!{fullRole.permissions.length()} > 60 )
+                            $!{fullRole.permissions.substring(0,60)}  ...
+                            <button class="btn btn_list_display" data-toggle="popover"  permissions="$!{fullRole.permissions}"
+                                    type="button" data-content="" data-placement="right"
+                                    ><em class="icon-align-left"></em>
+                                显示全部
+                            </button>
+
+
+                        #else
+                            $!{fullRole.permissions}
+                        #end
                     </td>
                     <td>
                         <div class="span12">
                             <div class="btn-group">
-                                <button class="btn" type="button"><em class="icon-align-left"></em>
+                                <button class="btn btn_role_detail" roleId="$!{fullRole.id}" type="button"><em
+                                        class="icon-align-left"></em>
                                     详情
                                 </button>
-                                <button class="btn" type="button"><em class="icon-align-left"></em>
+                                <button class="btn btn_role_edit" roleId="$!{fullRole.id}" type="button"><em
+                                        class="icon-align-left"></em>
                                     编辑
                                 </button>
-                                <button class="btn" type="button"><em class="icon-align-center"></em>
+                                <button class="btn btn_role_delete" roleId="$!{fullRole.id}" type="button"><em
+                                        class="icon-align-center"></em>
                                     删除
                                 </button>
                             </div>
@@ -63,7 +118,7 @@
         </table>
         <div class="view btn_add">
             <p>
-                <button class="alert alert-info">新增角色 +</button>
+                <button id="btn_role_add" class="alert alert-info">新增角色 +</button>
             </p>
         </div>
     </div>

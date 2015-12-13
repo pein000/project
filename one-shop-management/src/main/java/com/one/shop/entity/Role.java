@@ -10,9 +10,9 @@ import javax.persistence.*;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    Integer id;
+    int id;
     /**
      * 角色名
      **/
@@ -43,11 +43,11 @@ public class Role {
     String createTime;
 
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

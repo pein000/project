@@ -2,7 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1500da9d-5641-4449-9ad2-1d1ff7c3eb8e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/domain/FullRevealed.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/PictureGoodsUrl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/RevealedGoods.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RevealedQueryDslRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RevealedSQLRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/RolePermissionMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RolePermissionQueryDslRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/UserRoleQueryDslRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/permission/permission_add.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/permission/permission_detail.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/permission/permission_edit.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/type/revealed_detail.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/type/revealed_profile.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/role/role_add.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/role/role_detail.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/role/role_edit.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_detail.vm" />
+      <change type="DELETED" beforePath="D:\data\project\one-shop-management\src\main\java\com\one\shop\entity\pictureGoodsUrl.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/one/shop/schedule/RevealScheduler.class" afterPath="$PROJECT_DIR$/build/classes/main/com/one/shop/schedule/RevealScheduler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/build/classes/main/com/one/shop/domain/User.class" afterPath="$PROJECT_DIR$/../one-shop-website/build/classes/main/com/one/shop/domain/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../one-shop-website/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/ExceptionController.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/ExceptionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/domain/FullRole.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/domain/FullRole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/domain/FullUser.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/domain/FullUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/LoginController.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/LoginService.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/LoginService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/src/main/java/com/one/shop/service/PayService.java" afterPath="$PROJECT_DIR$/../one-shop-website/src/main/java/com/one/shop/service/PayService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/PermissionController.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/PermissionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/PermissionQueryDslRepository.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/PermissionQueryDslRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/PermissionService.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/PermissionService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java" afterPath="$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/Role.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/Role.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/RoleController.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/RoleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RolePermissionSQLRepository.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RolePermissionSQLRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RoleQueryDslRepository.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/RoleQueryDslRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/RoleService.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/RoleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/basic/SQLRepository.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/basic/SQLRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/TypeController.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/TypeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/TypeManagerService.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/TypeManagerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/User.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/UserController.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-website/src/main/java/com/one/shop/entity/UserEntity.java" afterPath="$PROJECT_DIR$/../one-shop-website/src/main/java/com/one/shop/entity/UserEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/UserQueryDslRepository.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/repository/UserQueryDslRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/UserRoleMapper.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/entity/UserRoleMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/UserService.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/WebConfig.java" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/java/com/one/shop/WebConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/aserts/js/content.js" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/aserts/js/content.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/main/index.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/main/index.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/layout/left_nav.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/layout/left_nav.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/permission/permission_profile.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/permission/permission_profile.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/role/role_profile.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/role/role_profile.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_add.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_add.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_edit.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_edit.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_profile.vm" afterPath="$PROJECT_DIR$/../one-shop-management/src/main/webapp/WEB-INF/velocity/user/user_profile.vm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="one-shop-core.iws" />
@@ -43,12 +103,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3943661">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1448779199867" expanded="true" signature="98540:98628" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reward.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/domain/Reward.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+              <folding>
+                <element signature="e#249#250#0" expanded="false" />
+                <element signature="e#274#275#0" expanded="false" />
+                <element signature="e#307#308#0" expanded="false" />
+                <element signature="e#335#336#0" expanded="false" />
+                <element signature="e#365#366#0" expanded="false" />
+                <element signature="e#394#395#0" expanded="false" />
+                <element signature="e#435#436#0" expanded="false" />
+                <element signature="e#471#472#0" expanded="false" />
+                <element signature="e#502#503#0" expanded="false" />
+                <element signature="e#532#533#0" expanded="false" />
+                <element signature="e#575#576#0" expanded="false" />
+                <element signature="e#613#614#0" expanded="false" />
+                <element signature="e#646#647#0" expanded="false" />
+                <element signature="e#675#676#0" expanded="false" />
+                <element signature="e#719#720#0" expanded="false" />
+                <element signature="e#755#756#0" expanded="false" />
+                <element signature="e#792#793#0" expanded="false" />
+                <element signature="e#825#826#0" expanded="false" />
+                <element signature="e#877#878#0" expanded="false" />
+                <element signature="e#921#922#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevealService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/service/RevealService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="57" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevealScheduler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22222222">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/persistence/GoodsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -407,10 +532,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/one/shop/persistence/RevealedMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/one/shop/MyBatisApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/one/shop/settings/JdbcConnectionSettings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/one/shop/service/RevealService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/one/shop/persistence/MarkerMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/one/shop/service/RevealService.java" />
       </list>
     </option>
   </component>
@@ -431,7 +556,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="width" value="1932" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -457,8 +582,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -490,10 +613,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -510,10 +629,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -663,39 +778,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="one-shop-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="one-shop-core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1042,7 +1129,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b23df89f-ad64-47e5-8074-50ff1c0be2d2" name="Default" comment="" />
+      <changelist id="1500da9d-5641-4449-9ad2-1d1ff7c3eb8e" name="Default" comment="" />
       <created>1446946500071</created>
       <option name="number" value="Default" />
       <updated>1446946500071</updated>
@@ -1054,11 +1141,13 @@
       <workItem from="1447654090211" duration="624000" />
       <workItem from="1447726872138" duration="604000" />
       <workItem from="1447927050046" duration="3000" />
+      <workItem from="1448257802648" duration="3655000" />
+      <workItem from="1448763710194" duration="1258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27584000" />
+    <option name="totallyTimeSpent" value="32497000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1070,34 +1159,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-9" y="-9" width="1932" height="1050" extended-state="1" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1112,8 +1201,140 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3943661">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1448779199867" expanded="true" signature="98540:98628" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/domain/Reward.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#249#250#0" expanded="false" />
+            <element signature="e#274#275#0" expanded="false" />
+            <element signature="e#307#308#0" expanded="false" />
+            <element signature="e#335#336#0" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#435#436#0" expanded="false" />
+            <element signature="e#471#472#0" expanded="false" />
+            <element signature="e#502#503#0" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#613#614#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+            <element signature="e#755#756#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="false" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#921#922#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/service/RevealService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/persistence/GoodsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1448779199867" expanded="true" signature="98540:98628" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1448779199867" expanded="true" signature="98540:98628" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/domain/Reward.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#249#250#0" expanded="false" />
+            <element signature="e#274#275#0" expanded="false" />
+            <element signature="e#307#308#0" expanded="false" />
+            <element signature="e#335#336#0" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#435#436#0" expanded="false" />
+            <element signature="e#471#472#0" expanded="false" />
+            <element signature="e#502#503#0" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#613#614#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+            <element signature="e#755#756#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="false" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#921#922#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/persistence/GoodsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/service/RevealService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="57" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/one/shop/schedule/RevealScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22222222">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>

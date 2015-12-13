@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    #parse("layout/head_resources.vm")
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="media well">
+                <video src="${videoUrl}" controls="controls">
+                    您的浏览器不支持，请使用更高版本的浏览器
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

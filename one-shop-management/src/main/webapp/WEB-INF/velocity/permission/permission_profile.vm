@@ -5,6 +5,33 @@
     <link href=#springUrl("/aserts/css/style_content.css") rel="stylesheet">
     <script src=#springUrl("/aserts/js/jquery-2.0.0.min.js")></script>
     <script src=#springUrl("/aserts/js/bootstrap.min.js")></script>
+    <script>var localPath = "#springUrl('')";</script>
+    <script>
+        $(function(){
+            //添加权限
+            $("#btn_permission_add").on("click",function(){
+                location.href="#springUrl("/permission/to_add_permission")";
+            });
+            //用户详情
+            $(".btn_permission_detail").on("click",function(){
+                var permissionId = $(this).attr("permissionId");
+                var path = "/permission/to_detail_permission?permissionId="+permissionId;
+                location.href=localPath+path;
+            });
+            //编辑用户
+            $(".btn_permission_edit").on("click",function(){
+                var permissionId = $(this).attr("permissionId");
+                var path = "/permission/to_edit_permission?permissionId="+permissionId;
+                location.href=localPath+path;
+            });
+            //删除用户
+            $(".btn_permission_delete").on("click",function(){
+                var permissionId = $(this).attr("permissionId");
+                var path = "/permission/to_delete_permission?permissionId="+permissionId;
+                location.href=localPath+path;
+            });
+        })
+    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -45,13 +72,13 @@
                     <td>
                         <div class="span12">
                             <div class="btn-group">
-                                <button class="btn" type="button"><em class="icon-align-left"></em>
+                                <button class="btn btn_permission_detail" permissionId="$!{permission.id}" type="button"><em class="icon-align-left"></em>
                                     详情
                                 </button>
-                                <button class="btn" type="button"><em class="icon-align-left"></em>
+                                <button class="btn btn_permission_edit" permissionId="$!{permission.id}" type="button"><em class="icon-align-left"></em>
                                     编辑
                                 </button>
-                                <button class="btn" type="button"><em class="icon-align-center"></em>
+                                <button class="btn btn_permission_delete" permissionId="$!{permission.id}" type="button"><em class="icon-align-center"></em>
                                     删除
                                 </button>
                             </div>
@@ -63,7 +90,7 @@
         </table>
         <div class="view btn_add">
             <p>
-                <button class="alert alert-info">新增角色 +</button>
+                <button id="btn_permission_add" class="alert alert-info">新增权限 +</button>
             </p>
         </div>
     </div>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jodd:jodd-bean:3.6.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jodd/jodd-bean/3.6.5/fb62752342c9f941e2e578946883ea1b631712f2/jodd-bean-3.6.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jodd/jodd-bean/3.6.5/e7dd243631d5ee576201d47b5e9923b2a5c62503/jodd-bean-3.6.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

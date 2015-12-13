@@ -22,14 +22,14 @@ public class RolePermissionSQLRepository extends SQLRepository {
     private static final Logger LOGGER = LoggerFactory.getLogger(RolePermissionSQLRepository.class);
 
     public List<String> findPermissionValueByRole(Role role){
-        String sql = "select m.permission from authority_role_permission m\n" +
+        String sql = "select p.permission from authority_role_permission m\n" +
                 "join authority_permission p\n" +
                 "on m.PERMISSION_ID = p.ID\n" +
                 "where m.ROLE_ID = '"+role.getId()+"'";
         LOGGER.info("RolePermissionSQLRepository -> findPermissionValueByRole :: {}",sql);
-        List<Object[]> objects =  getEntityManager().createNativeQuery(sql).getResultList();
+        List<String> objects =  getEntityManager().createNativeQuery(sql).getResultList();
 
-        return buildPermissionValueList(objects);
+        return objects;
     }
 
     public List<Permission> findPermissionByRole(Role role){

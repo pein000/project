@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>video share</title>
+</head>
+<body>
+<div>
+    <video src="#springUrl("/static/vedio/videoviewdemo.mp4")" controls="controls">
+        您的浏览器不支持，请使用更高版本的浏览器
+    </video>
+</div>
+</body>
+</html>

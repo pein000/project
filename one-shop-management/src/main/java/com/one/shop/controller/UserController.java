@@ -5,6 +5,9 @@ import com.one.shop.entity.Role;
 import com.one.shop.entity.User;
 import com.one.shop.service.RoleService;
 import com.one.shop.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +34,15 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
+
+
     /**
      * 用户管理首页
      * @param modelMap
      * @return
      */
     @RequestMapping(value = "/to_user")
+    @RequiresPermissions(value = "user:query")
     public ModelAndView toUser(ModelMap modelMap) {
         List<FullUser> fullUserList = userService.findAll();
         modelMap.put("fullUserList", fullUserList);
@@ -44,19 +50,41 @@ public class UserController {
     }
 
     @RequestMapping(value = "/to_add_user")
+    @RequiresPermissions(value = "user:add")
     public String toAddUser() {
 
         return "/user/user_add";
     }
 
     @RequestMapping(value="/add_user",method = RequestMethod.POST)
+    @RequiresPermissions(value = "user:add")
     public String addUser(User user) {
         userService.saveUser(user);
         return "redirect:/user/to_user";
     }
 
+
+    @RequestMapping(value="/to_detail_user")
+    @RequiresPermissions(value = "user:query")
+    public ModelAndView toDetailUser(int userId, ModelMap modelMap) {
+        User user = userService.findUserById(userId);
+        if(user == null){
+            LOGGER.error("no user found! userId = {}",userId);
+            return new ModelAndView("/error/error");
+        }
+        List<Role> userRoleList = roleService.findRoleByUser(user);
+
+        modelMap.put("user", user);
+        modelMap.put("userRoleList",userRoleList);
+
+        return new ModelAndView("/user/user_detail", modelMap);
+    }
+
+
     @RequestMapping(value="/to_edit_user")
-    public ModelAndView to_edit_user(int userId, ModelMap modelMap) {
+    @RequiresPermissions("user:edit")
+    public ModelAndView toEditUser(int userId, ModelMap modelMap) {
+        Subject subject = SecurityUtils.getSubject();
         User user = userService.findUserById(userId);
         if(user == null){
             LOGGER.error("no user found! userId = {}",userId);
@@ -72,7 +100,15 @@ public class UserController {
         return new ModelAndView("/user/user_edit", modelMap);
     }
 
+    @RequestMapping(value = "edit_operate_user")
+    @RequiresPermissions("user:edit")
+    public String editOperateUser(FullUser fullUser) {
+        userService.updateUserAndRole(fullUser);
+        return "redirect:/user/to_user";
+    }
+
     @RequestMapping(value="/to_delete_user")
+    @RequiresPermissions(value = "user:delete")
     public String toDeleteUser(int userId) {
         userService.deleteUser(userId);
         return "redirect:/user/to_user";

@@ -3,8 +3,10 @@ package com.one.shop.service;
 import com.one.shop.domain.FullUser;
 import com.one.shop.entity.Role;
 import com.one.shop.entity.User;
+import com.one.shop.entity.UserRoleMapper;
 import com.one.shop.enums.Deleted;
 import com.one.shop.repository.UserQueryDslRepository;
+import com.one.shop.repository.UserRoleQueryDslRepository;
 import com.one.shop.repository.UserRoleSQLRepository;
 import com.one.shop.util.DateUtils;
 import com.one.shop.util.JSONUtils;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,6 +33,9 @@ public class UserService {
 
     @Autowired
     private UserRoleSQLRepository userRoleSQLRepository;
+
+    @Autowired
+    private UserRoleQueryDslRepository userRoleQueryDslRepository;
 
     public List<FullUser> findAll() {
         LOGGER.info("begin to find all user. ");
@@ -78,12 +84,47 @@ public class UserService {
         return user;
     }
 
+    /**
+     * 1更新用户表，用户记录
+     * 2删除用户角色映射表中当前用户所有角色
+     * 3重新添加新的角色
+     * @param fullUser
+     */
+    @Transactional
+    public void updateUserAndRole(FullUser fullUser) {
+        LOGGER.info("begin to update user and role. fullUser = {}", JSONUtils.toJson(fullUser));
+        User user = buildUser(fullUser);
+        userQueryDslRepository.updateUser(user);
+        String roleIds = fullUser.getRoles();
+        List<String> roleIdList = Arrays.asList(roleIds.split(","));
+        userRoleQueryDslRepository.deleteUserRoleByUser(user);
+        for (String roleId : roleIdList) {
+            userRoleQueryDslRepository.save(buildUserRoleMapper(user, roleId));
+        }
+        LOGGER.info("success to update user and role. fullUser = {}", JSONUtils.toJson(fullUser));
+    }
 
     @Transactional
     public void deleteUser(int userId) {
         LOGGER.info("begin to delete user. userId = {}", userId);
         userQueryDslRepository.deleteUserById(userId);
+        userRoleQueryDslRepository.deleteUserRoleByUserId(userId);
         LOGGER.info("success to delete user. userId = {}", userId);
+    }
+
+    private User buildUser(FullUser fullUser) {
+        User user = new User();
+        user.setId(fullUser.getId());
+        user.setName(fullUser.getName());
+        user.setPassword(fullUser.getPassword());
+        return user;
+    }
+
+    private UserRoleMapper buildUserRoleMapper(User user, String roleId) {
+        UserRoleMapper mapper = new UserRoleMapper();
+        mapper.setRoleId(Integer.parseInt(roleId));
+        mapper.setUserId(user.getId());
+        return mapper;
     }
 
 }
